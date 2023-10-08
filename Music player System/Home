@@ -1,0 +1,259 @@
+package src;
+
+import java.util.*;
+import java.sql.*;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.io.*;
+
+class Home{
+
+    static Scanner sc = new Scanner(System.in);
+    static ArrayList<String> songPathName;
+    static HashMap<String,String> favSongs = new HashMap();
+    static HashMap<String,String> recentlyPlayedSongs = new HashMap();
+
+    static void player(String tablename,String songPath,int songChoise,Connection con) throws Exception{
+        //recentlyPlayedSongs = new HashMap();
+        //favSongs = new HashMap();
+        System.out.println(songPathName.get(songChoise));
+        String url = songPathName.get(songChoise);
+        File audioFile = new File(url);
+        System.out.println(audioFile.getAbsolutePath());
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioStream);
+        String response = "";
+ 
+        while(!response.equals("Q")) {
+        System.out.println("B = Previous, P = Play, S = Stop, N = Next, F = Favourite, Q = Quit");
+        System.out.print("Enter your choice: ");
+        response = sc.next();
+        response = response.toUpperCase();
+            switch(response) {
+            
+                case ("P"): clip.start();
+                            String getSongNameSql = "select songfile,songname from "+tablename;
+                            PreparedStatement pst1 = con.prepareStatement(getSongNameSql);
+                            //pst1.setString(1,tablename);
+                            ResultSet rs = pst1.executeQuery();
+                            int i = 0;
+                            while(rs.next()){
+                                System.out.println("name"+rs.getString("songname"));
+                                if(i==songChoise){
+                                    //System.out.println("name"+rs.getString("songname"));
+                                    recentlyPlayedSongs.put(rs.getString("songname"),rs.getString("songfile"));
+                                    System.out.println("Added to recently played");
+                                    System.out.println();
+                                    break;
+                                }
+                                i++;
+                            }
+                        
+                                System.out.println(recentlyPlayedSongs.keySet());
+                            
+                            break;
+                case ("S"): clip.stop();
+                            break;
+                //case ("R"): clip.setMicrosecondPosition(10000000);
+                            //break;
+                case ("N"): response = "Q";
+                            clip.stop();
+                            if((songChoise+1)==songPathName.size()){
+                                System.out.println("There are no songs further");
+                                continue;
+                            }
+                            player(tablename,songPath,songChoise+1,con);
+                            break;
+                case ("B"): response = "Q";
+                            clip.stop();
+                            if((songChoise-1)==-1){
+                                System.out.println("There are no songs further");
+                                continue;
+                            }
+                            player(tablename,songPath, songChoise-1,con);
+                            clip.stop();
+                            break;
+                case ("F"): String getSongNameSql2 = "select songfile,songname from "+tablename;
+                            PreparedStatement pst2 = con.prepareStatement(getSongNameSql2);
+                            //pst1.setString(1,tablename);
+                            ResultSet rs2 = pst2.executeQuery();
+                            int i2 = 0;
+                            while(rs2.next()){
+                                //System.out.println("name"+rs.getString("songname"));
+                                if(i2==songChoise){
+                                    //System.out.println("name"+rs.getString("songname"));
+                                    favSongs.put(rs2.getString("songname"),rs2.getString("songfile"));
+                                    System.out.println("Added to favourties");
+                                    System.out.println();
+                                    break;
+                                }
+                                i2++;
+                            }
+                        
+                                System.out.println(favSongs.keySet());
+                            
+                            break;
+                case ("Q"): clip.close();
+                            break;
+                default: System.out.println("Not a valid response");
+                         break;
+            }           
+    }
+    }
+
+    static void playSong(String tablename,int uniqueID,Connection con) throws Exception{
+        boolean isTrue = true;
+        while(isTrue){
+        songPathName = new ArrayList<>();
+        String getSongNameSql = "select songfile,songname from "+tablename;
+        PreparedStatement pst1 = con.prepareStatement(getSongNameSql);
+        //pst1.setString(1,tablename);
+        ResultSet rs1 = pst1.executeQuery();
+        System.out.println("1)Get list of songs  2)Go Back");
+        int choise = sc.nextInt();
+        if(choise==1){
+        int i = 1;
+        while(rs1.next()){
+            System.out.println(i+") "+rs1.getString("songname"));
+            i++;
+            songPathName.add(rs1.getString("songfile"));
+        }
+        System.out.println("Enter the song u want to listen");
+        int songChoise = sc.nextInt();
+       
+        player(tablename,songPathName.get(songChoise-1),songChoise-1,con);
+        songPathName.clear();
+    }else{
+        isTrue = false;
+    }
+        }
+    }
+
+    void artistBasedSong(Connection con) throws Exception {
+        boolean isTrue = true;
+        while(isTrue){
+        String artistSelected;
+        int uniqueID;
+        String tablename;
+        String sql = "select artist1,artist2,artist3 from users where username = ?";
+        PreparedStatement pst = con.prepareStatement(sql);
+        pst.setString(1,Login.usn);
+        ResultSet rs1 = pst.executeQuery();
+        while(rs1.next()){
+            System.out.println("1) "+rs1.getString("artist1"));
+            System.out.println("2) "+rs1.getString("artist2"));
+            System.out.println("3) "+rs1.getString("artist3"));
+        
+        System.out.println("Select the artist u want to listen or 4)go back");
+        int artistChoise = sc.nextInt();
+        if(artistChoise==1)
+            artistSelected = rs1.getString("artist1");
+        else if(artistChoise==2)
+            artistSelected = rs1.getString("artist2");
+        else if(artistChoise==3)
+            artistSelected = rs1.getString("artist3");
+        else{
+            isTrue = false;
+            break;
+        }
+        
+        if(artistSelected.equalsIgnoreCase("arijit singh")){
+            tablename = "arijitsinghsongs";
+            uniqueID = 101;
+            playSong(tablename,uniqueID,con);
+        }
+        else if(artistSelected.equalsIgnoreCase("shreya ghoshal")){
+            tablename = "shreyaghoshalsongs";
+            uniqueID = 102;
+            playSong(tablename,uniqueID,con);
+        }
+        else if(artistSelected.equalsIgnoreCase("taylor swift")){
+            tablename = "taylorswiftsongs";
+            uniqueID = 103;
+            playSong(tablename,uniqueID,con);
+        }
+        else if(artistSelected.equalsIgnoreCase("ed sheeran")){
+            tablename = "edsheeransongs";
+            uniqueID = 104;
+            playSong(tablename,uniqueID,con);
+        }
+        else if(artistSelected.equalsIgnoreCase("diljit dosanjh")){
+            tablename = "diljitdosanjhsongs";
+            uniqueID = 105;
+            playSong(tablename,uniqueID,con);
+        }
+        else if(artistSelected.equalsIgnoreCase("aditya gadhvi")){
+            tablename = "adityagadhvisongs";
+            uniqueID = 106;
+            playSong(tablename,uniqueID,con);
+
+        }else if(artistSelected.equalsIgnoreCase("sonu nigam")){
+            tablename = "sonunigamsongs";
+            uniqueID = 107;
+            playSong(tablename,uniqueID,con);
+        }
+        }
+    }
+}
+
+    void languageBasedSong(Connection con) throws Exception{
+        boolean isTrue = true;
+        while(isTrue){
+            int uniqueID;
+            String tablename;
+            String langSelected;
+            String sql = "select lang1,lang2,lang3 from users where username = ?";
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.setString(1,Login.usn);
+            ResultSet rs1 = pst.executeQuery();
+            while(rs1.next()){
+                System.out.println("1) "+rs1.getString("lang1"));
+                System.out.println("2) "+rs1.getString("lang2"));
+                System.out.println("3) "+rs1.getString("lang3"));
+            
+            System.out.println("Select the artist u want to listen or 4)go back");
+            int artistChoise = sc.nextInt();
+            if(artistChoise==1)
+                langSelected = rs1.getString("lang1");
+            else if(artistChoise==2)
+                langSelected = rs1.getString("lang2");
+            else if(artistChoise==3)
+                langSelected = rs1.getString("lang3");
+            else{
+                isTrue = false;
+                break;
+            }
+
+            if(langSelected.equalsIgnoreCase("hindi")){
+                tablename = "hindisongs";
+                uniqueID = 201;
+                playSong(tablename,uniqueID,con);
+            }
+            else if(langSelected.equalsIgnoreCase("english")){
+                tablename = "englishsongs";
+                uniqueID = 202;
+                playSong(tablename,uniqueID,con);
+            }
+            else if(langSelected.equalsIgnoreCase("gujarati")){
+                tablename = "gujaratisongs";
+                uniqueID = 203;
+                playSong(tablename,uniqueID,con);
+            }
+            else if(langSelected.equalsIgnoreCase("punjabi")){
+                tablename = "punjabisongs";
+                uniqueID = 204;
+                playSong(tablename,uniqueID,con);
+            }
+        
+        }
+    }
+}
+
+    void genresBasedSong(Connection con){
+        
+    }
+       
+
+}
