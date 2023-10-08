@@ -1,0 +1,233 @@
+package src;
+
+import java.util.*;
+import java.sql.*;
+
+public class Login {
+    static Scanner sc = new Scanner(System.in);
+    static Connection con;
+    static Statement st;
+    static String usn;
+    static PreparedStatement pst_in;
+
+    static ArrayList<String> lang = new ArrayList<>();
+    static ArrayList<String> genre = new ArrayList<>();
+    static ArrayList<String> artist = new ArrayList<>();
+    ArrayList<String> log_phone = new ArrayList<>(); 
+
+    Login() throws SQLException{
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mps","root","");
+        st = con.createStatement();
+        if(con!=null){
+            System.out.println("Database Successfully Connected");
+            System.out.println();
+        }
+
+
+        System.out.println("--> WELCOME TO ______");
+        
+        int choice ;
+        boolean found = true;
+        do{
+        lang.add("ENGLISH");
+        lang.add("HINDI");
+        lang.add("GUJARATI");
+        lang.add("PUNJABI");
+
+        genre.add("POP");
+        genre.add("ROMANTIC");
+        genre.add("SAD");
+        genre.add("PHONK");
+
+        artist.add("ARIJIT SINGH");
+        artist.add("SHREYA GHOSHAL");
+        artist.add("TAYLOR SWIFT");
+        artist.add("ED SHEERAN");
+        artist.add("DILJIT DOSAN");
+        artist.add("ADITYA GADHVI");
+        artist.add("SONU NIGAM");
+
+            System.out.println("Are you already a user --> PRESS 1");
+            System.out.println("Using for the first time! --> PRESS 2");
+            System.out.print("Enter the choice: ");
+            choice = sc.nextInt();
+            if(choice == 1){
+                System.out.println("Enter you username :- ");
+                usn = sc.next();
+                System.out.println("Enter your password: ");
+                String pass = sc.next();
+
+                String login_query = "select * from users where username = '"+usn+"' and password = '"+pass+"'";
+                ResultSet rs = st.executeQuery(login_query);
+                if(rs.next()){
+                    System.out.println("----->>You have logged in<<-----");
+                    System.out.println("----->>Enjoy the ____________ blah blah blah<<-----");
+                   
+                    // will add other class constructor / methods 
+                    break;
+
+                }else{
+                    System.out.println("---SORRY---");
+                    System.out.println("----->>username or password doesn't match<<-----");
+                    System.out.println("Please SIGN UP first or recheck the username/password");
+                    /*
+                    System.out.println("Do you want to login using mobile number --> PRESS 1");
+                    System.out.println("Do you want to exit --> PRESS 2");
+                    System.out.print("ENTER CHOICE: ");
+                    int choice2 = sc.nextInt();
+                    */
+                }
+
+                    /* 
+                    if(choice2 == 1){
+                        System.out.print("Enter phone number: ");
+                        String phno = sc.next();
+                        //System.out.println(log_phone);
+                        log_phone.add(phno);
+                        System.out.println(log_phone);
+                        for(int i = 0; i<log_phone.size(); i++){
+                            if(phno.equals(log_phone.get(i))){
+                                System.out.println("----->>You have logged in<<-----");
+                                System.out.println("----->>Enjoy the ____________ blah blah blah<<-----");
+                                // will add other class constructor / methods
+                                // new Home();
+                                // new App_3();
+                                break;
+                            }
+                        }
+
+                        System.out.println("----->>Sorry we are unable to find your data<<-----");
+                        System.out.println("--------->>Please sign up first<<--------");
+                        System.out.println();
+                        found = false;
+                    }else if(choice2 == 2){
+                        System.out.println("THANK YOU");
+                        System.exit(0);
+                    }
+                    
+                }
+                */
+
+            }else if(choice == 2){
+                System.out.println("Welcome new user....blah blah blah");
+                System.out.println("Enter username: ");
+                String usn = sc.next();
+                System.out.println("Create Password: ");
+                String pass = sc.next();
+                System.out.println("Enter your phone number: ");
+                String phno = sc.next();
+                log_phone.add(phno);
+                System.out.println();
+
+ //taking language preferences
+
+                System.out.println("let's get your language preferences");
+                System.out.println(lang);
+                System.out.print("Enter language 1: ");
+                String lang1 = sc.next().toUpperCase();
+                for(int i = 0; i < lang.size(); i++){
+                    if(lang1.equals(lang.get(i))){
+                        lang.remove(i);
+                    }
+                }
+
+                System.out.println(lang);
+                System.out.print("Enter language 2: ");
+                String lang2 = sc.next().toUpperCase();
+                for(int i = 0; i < lang.size(); i++){
+                    if(lang2.equals(lang.get(i))){
+                        lang.remove(i);
+                    }
+                }
+
+                System.out.println(lang);
+                System.out.print("Enter language 3: ");
+                String lang3 = sc.next().toUpperCase();
+                for(int i = 0; i < lang.size(); i++){
+                    if(lang3.equals(lang.get(i))){
+                        lang.remove(i);
+                    }
+                }
+
+                 //taking genre preferences
+                System.out.println();
+                System.out.println("let's get your genre preferences");
+                System.out.println(genre);
+                System.out.print("Enter genre-1: ");
+                String genre1 = sc.next().toUpperCase();
+                for(int i = 0; i < genre.size(); i++){
+                    if(genre1.equals(genre.get(i))){
+                        genre.remove(i);
+                    }
+                }
+
+                System.out.println(genre);
+                System.out.print("Enter genre-2: ");
+                String genre2 = sc.next().toUpperCase();
+                for(int i = 0; i < genre.size(); i++){
+                    if(genre2.equals(genre.get(i))){
+                        genre.remove(i);
+                    }
+                }
+
+
+                System.out.println(genre);
+                System.out.print("Enter genre-3: ");
+                String genre3 = sc.next().toUpperCase();
+                for(int i = 0; i < genre.size(); i++){
+                    if(genre3.equals(genre.get(i))){
+                        genre.remove(i);
+                    }
+                }
+
+                System.out.println("let's get your artist preferences");
+                // //taking artist preferences
+                System.out.println(artist);
+                System.out.print("Enter artist-1: ");
+                sc.nextLine();
+                String artist1 = sc.nextLine().toUpperCase();
+                for(int i = 0; i < artist.size(); i++){
+                    if(artist1.equals(artist.get(i))){
+                        artist.remove(i);
+                    }
+                }
+
+
+                System.out.println(artist);
+                System.out.print("Enter artist-2: ");
+                String artist2 = sc.nextLine().toUpperCase();
+                for(int i = 0; i < artist.size(); i++){
+                    if(artist1.equals(artist.get(i))){
+                        artist.remove(i);
+                    }
+                }
+
+
+                System.out.println(artist);
+                System.out.print("Enter artist-3: ");
+                String artist3 = sc.nextLine().toUpperCase();
+                for(int i = 0; i < artist.size(); i++){
+                    if(artist3.equals(artist.get(i))){
+                        artist.remove(i);
+                    }
+                }
+
+
+                String ins = "insert into users (username,password,phoneno,lang1,lang2,lang3,genre1,genre2,genre3,artist1,artist2,artist3) values('"+usn+"','"+pass+"','"+phno+"','"+lang1+"','"+lang2+"','"+lang3+"','"+genre1+"','"+genre2+"','"+genre3+"','"+artist1+"','"+artist2+"','"+artist3+"')";
+                int affected = st.executeUpdate(ins);
+                if(affected>0){
+                    System.out.println("Successfully signed up");
+                }
+                System.out.println();
+                //found = false;
+            }else{
+                System.out.println("Invalid input --> PLEASE TRY AGAIN");
+            }
+
+            lang.clear();
+            genre.clear();
+            artist.clear();
+            
+        }while(choice == 1 || choice == 2 || found==false);
+    }
+}
