@@ -1,0 +1,127 @@
+class Stack_Methods{
+    class Node {
+        int operand;
+        Node link;
+
+        /**
+         * Creates a Node of Stack implemented by Singly Linked-List
+         * @param data
+         */
+        public Node(int operand) {
+            this.operand = operand;
+            this.link = null;
+        }
+    }
+
+    // top pointer, points topmost element of Stack
+    Node top = null;
+
+    /**
+     * @param x data to push into OperandStack
+     */
+    void push(int x) {
+        Node newNode = new Node(x);
+        newNode.link = top;
+        top = newNode;
+    }
+
+    /**
+     * removes top from OperandStack
+     * @return topmost element of OperandStack
+     */
+    int pop() {
+        if (top == null) {
+            return -1;
+        } else {
+            int temp = top.operand;
+            top = top.link;
+            return temp;
+        }
+    }
+
+    /**
+     * @return topmost element of OperandStack
+     */
+    int peek() {
+        if (top == null) {
+            return -1;
+        } else {
+            return top.operand;
+        }
+    }
+
+    /**
+     * @return boolean values that stack is empty or not
+     */
+    boolean isEmpty() {
+        if (top == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+class OperatorStack {
+    class Node {
+        char operator;
+        Node link;
+
+        /**
+         * Creates a Node of Stack implemented by Singly Linked-List
+         * @param data
+         */
+        public Node(char operator) {
+            this.operator = operator;
+            this.link = null;
+        }
+    }
+
+    // top pointer, points topmost element of Stack
+    Node top = null;
+
+    /**
+     * @param x data to push into OperatorStack
+     */
+    void push(char x) {
+        Node newNode = new Node(x);
+        newNode.link = top;
+        top = newNode;
+    }
+
+    /**
+     * removes top from OperandStack
+     * @return topmost element of OperatorStack
+     */
+    char pop() {
+        if (top == null) {
+            return '#';
+        } else {
+            char temp = top.operator;
+            top = top.link;
+            return temp;
+        }
+    }
+
+    /**
+     * @return topmost element of OperatorStack
+     */
+    char peek() {
+        if (top == null) {
+            return '#';
+        } else {
+            return top.operator;
+        }
+    }
+
+    /**
+     * @return boolean value that stack is empty or not
+     */
+    boolean isEmpty() {
+        if (top == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
