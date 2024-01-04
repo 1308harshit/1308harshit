@@ -1,0 +1,252 @@
+// Java program to convert prefix to Infix
+// String exp = "*-A/BC-/AKL";
+	
+import java.util.Stack;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+//----------------------------------------------------------------------------
+
+class OperandStack {
+    class Node {
+        int operand;
+        Node link;
+
+        /**
+         * Creates a Node of Stack implemented by Singly Linked-List
+         * @param data
+         */
+        public Node(int operand) {
+            this.operand = operand;
+            this.link = null;
+        }
+    }
+
+    // top pointer, points topmost element of Stack
+    Node top = null;
+
+    /**
+     * @param x data to push into OperandStack
+     */
+    void push(int x) {
+        Node newNode = new Node(x);
+        newNode.link = top;
+        top = newNode;
+    }
+
+    /**
+     * removes top from OperandStack
+     * @return topmost element of OperandStack
+     */
+    int pop() {
+        if (top == null) {
+            return -1;
+        } else {
+            int temp = top.operand;
+            top = top.link;
+            return temp;
+        }
+    }
+
+    /**
+     * @return topmost element of OperandStack
+     */
+    int peek() {
+        if (top == null) {
+            return -1;
+        } else {
+            return top.operand;
+        }
+    }
+
+    /**
+     * @return boolean values that stack is empty or not
+     */
+    boolean isEmpty() {
+        if (top == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+class OperatorStack {
+    class Node {
+        char operator;
+        Node link;
+
+        /**
+         * Creates a Node of Stack implemented by Singly Linked-List
+         * @param data
+         */
+        public Node(char operator) {
+            this.operator = operator;
+            this.link = null;
+        }
+    }
+
+    // top pointer, points topmost element of Stack
+    Node top = null;
+
+    /**
+     * @param x data to push into OperatorStack
+     */
+    void push(char x) {
+        Node newNode = new Node(x);
+        newNode.link = top;
+        top = newNode;
+    }
+
+    /**
+     * removes top from OperandStack
+     * @return topmost element of OperatorStack
+     */
+    char pop() {
+        if (top == null) {
+            return '#';
+        } else {
+            char temp = top.operator;
+            top = top.link;
+            return temp;
+        }
+    }
+
+    /**
+     * @return topmost element of OperatorStack
+     */
+    char peek() {
+        if (top == null) {
+            return '#';
+        } else {
+            return top.operator;
+        }
+    }
+
+    /**
+     * @return boolean value that stack is empty or not
+     */
+    boolean isEmpty() {
+        if (top == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+
+//-------------------------------------------------------------------------------
+
+class PrefixToInfix extends JFrame implements ActionListener{
+
+	JLabel text;
+	JTextField input,output;
+	JButton convert;
+// Function to check if character
+// is operator or not	
+static boolean isOperator(char x)
+{
+	switch(x)
+	{
+		case '+':
+		case '-':
+		case '*':
+		case '/':
+		case '^':
+		case '%':
+			return true;
+	}
+	return false;
+}
+
+// Convert prefix to Infix expression
+public static String convert(String str)
+{
+	Stack<String> stack = new Stack<>();
+	OperandStack operators = new OperandStack();
+	
+	// Length of expression
+	int l = str.length();
+	
+	// Reading from right to left
+	for(int i = l - 1; i >= 0; i--)
+	{
+		char c = str.charAt(i);
+		if (isOperator(c))
+		{
+			String op1 = stack.pop();
+			String op2 = stack.pop();
+			
+			// Concat the operands and operator
+			String temp = "(" + op1 + c + op2 + ")";
+			stack.push(temp);
+		}
+		else
+		{
+			
+			// To make character to string
+			stack.push(c + "");
+		}
+	}
+	return stack.pop();
+}
+
+	public PrefixToInfix(){
+		setLayout(null);
+        setSize(800, 480);
+        setLocation(250,100);
+        setTitle("CONVERTER");
+
+        getContentPane().setBackground(Color.cyan);
+
+        text = new JLabel("<HTML><u>Enter the PREFIX below</u></HTML>");
+        text.setFont(new Font("Osward",Font.BOLD,35));
+        text.setBounds(200,90,600,40);
+        add(text);
+
+		input = new JTextField();
+		input.setBounds(200,140,350,30);
+		input.setFont(new Font("Osward",Font.BOLD,16));
+		add(input);
+
+		convert = new JButton("CONVERT");
+		convert.setBounds(300,200 ,150 ,30 );
+		convert.setFont(new Font("Raleway",Font.BOLD,16));
+		convert.addActionListener(this);
+		add(convert);
+
+		text = new JLabel("<HTML><u>OUTPUT</u></HTML>");
+        text.setFont(new Font("Osward",Font.BOLD,35));
+        text.setBounds(300,250,600,40);
+        add(text);
+
+		// String exp = "*-A/BC-/AKL";
+		// System.out.println("Infix : " + convert(exp));
+
+		setVisible(true);
+	}
+	
+	public void actionPerformed(ActionEvent ae){
+		if(ae.getSource() == convert){
+
+			String in = input.getText();
+			String ans = convert(in);
+
+			output = new JTextField(ans);
+			output.setBounds(200,300,350,30);
+			output.setFont(new Font("Osward",Font.BOLD,16));
+			add(output);
+			
+		}
+	}
+
+public static void main(String[] args)
+{
+	new PrefixToInfix();
+}
+}
+
+
