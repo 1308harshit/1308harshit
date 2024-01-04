@@ -1,0 +1,194 @@
+// Java code to convert infix expression to postfix
+//String s = "(A-B/C)*(A/K-L)";
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+
+class OperatorStack {
+    class Node {
+        char operator;
+        Node link;
+        
+        // Creates a Node of Stack implemented by Singly Linked-List
+        
+        public Node(char operator) {
+            this.operator = operator;
+            this.link = null;
+        }
+    }
+
+    // top pointer, points topmost element of Stack
+    Node top = null;
+
+    
+     // @param x data to push into OperatorStack
+     
+    void push(char x) {
+        Node newNode = new Node(x);
+        newNode.link = top;
+        top = newNode;
+    }
+      //removes top from OperandStack
+     // @return topmost element of OperatorStack
+     
+    char pop() {
+        if (top == null) {
+            return '#';
+        } else {
+            char temp = top.operator;
+            top = top.link;
+            return temp;
+        }
+    }
+
+    char peek() {
+        if (top == null) {
+            return '#';
+        } else {
+            return top.operator;
+        }
+    }
+
+    
+    //  @return boolean value that stack is empty or not
+     
+    boolean isEmpty() {
+        if (top == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+//---------------------------------------------------------------------------//
+
+class InfixToPostfix extends JFrame implements ActionListener{
+	JLabel text;
+	JTextField input,output;
+	JButton convert;
+
+	// A utility function to return precedence of a given operator
+	// Higher returned value means higher precedence
+	static int Prec(char i)
+	{
+		switch (i) {
+		case '+':
+		case '-':
+			return 1;
+
+		case '*':
+		case '/':
+			return 2;
+
+		case '^':
+			return 3;
+		}
+		return -1;
+	}
+
+	// The main method that converts given infix expression  to postfix expression.
+	static String infixToPostfix(String exp)
+	{
+		// Initializing empty String for result
+		String result = "";
+        OperatorStack operators = new OperatorStack();
+			
+		for (int i = 0; i < exp.length(); ++i) {
+			char c = exp.charAt(i);
+
+			// If the scanned character is an operand, add it to output.
+			if (Character.isLetterOrDigit(c))
+				result += c;
+
+			// If the scanned character is an '(',  push it to the stack.
+			else if (c == '(')
+				operators.push(c);
+
+			// If the scanned character is an ')',  pop and output from the stack until an '(' is encountered.
+			else if (c == ')') {
+				while (!operators.isEmpty() && operators.peek() != '(') {
+					result += operators.peek();
+					operators.pop();
+				}
+				operators.pop();
+			}
+			
+			else
+			{
+				while (!operators.isEmpty() && Prec(c) <= Prec(operators.peek())) {
+					result += operators.peek();
+					operators.pop();
+				}
+				operators.push(c);
+			}
+		}
+
+		// Pop all the operators from the stack
+		while (!operators.isEmpty()) {
+			if (operators.peek() == '(')
+				return "Invalid Expression";
+			result += operators.peek();
+			operators.pop();
+		}
+		
+		return result;
+	}
+
+	public InfixToPostfix(){
+		// Scanner sc = new Scanner(System.in);
+        // String exp = sc.next();
+		setLayout(null);
+        setSize(800, 480);
+        setLocation(250,100);
+        setTitle("CONVERTER");
+
+        getContentPane().setBackground(Color.cyan);
+
+        text = new JLabel("<HTML><u>Enter the INFIX below</u></HTML>");
+        text.setFont(new Font("Osward",Font.BOLD,35));
+        text.setBounds(200,90,600,40);
+        add(text);
+
+		input = new JTextField();
+		input.setBounds(200,140,350,30);
+		input.setFont(new Font("Osward",Font.BOLD,16));
+		add(input);
+
+		convert = new JButton("CONVERT");
+		convert.setBounds(300,200 ,150 ,30 );
+		convert.setFont(new Font("Raleway",Font.BOLD,16));
+		convert.addActionListener(this);
+		add(convert);
+
+		text = new JLabel("<HTML><u>OUTPUT</u></HTML>");
+        text.setFont(new Font("Osward",Font.BOLD,35));
+        text.setBounds(300,250,600,40);
+        add(text);
+
+		//String s = "(A-B/C)*(A/K-L)";
+
+		setVisible(true);
+	}
+	
+	public void actionPerformed(ActionEvent ae){
+		if(ae.getSource() == convert){
+
+			String in = input.getText();
+			String ans = infixToPostfix(in);
+
+			output = new JTextField(ans);
+			output.setBounds(200,300,350,30);
+			output.setFont(new Font("Osward",Font.BOLD,16));
+			add(output);
+			
+		}
+	}
+	public static void main(String[] args)
+	{
+		new InfixToPostfix();
+	}
+}
