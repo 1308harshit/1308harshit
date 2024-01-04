@@ -1,0 +1,98 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+class Main extends JFrame implements ActionListener{
+    JLabel text;
+    JButton inToPo,inToPre,poToPre,preToIn,poToIn;
+    JButton confirm,clear,exit;
+
+    Main(){
+        setLayout(null);
+        setSize(800, 480);
+        setLocation(250,100);
+        setTitle("CONVERTER");
+
+        getContentPane().setBackground(Color.cyan);
+
+        text = new JLabel("<HTML><u>Welcome to the Converter</u></HTML>");
+        text.setFont(new Font("Osward",Font.BOLD,38));
+        text.setBounds(150,30,600,40);
+        add(text);
+        
+        // adding buttons
+
+        inToPo = new JButton("Infix To Postfix");
+        inToPo.setFont(new Font("Raleway",Font.BOLD,20));
+        inToPo.setBounds(135,110,200,30);
+        inToPo.setBackground(Color.black);
+        inToPo.setForeground(Color.white);
+        inToPo.addActionListener(this);
+        add(inToPo);
+
+        inToPre = new JButton("Infix To Prefix");
+        inToPre.setFont(new Font("Raleway",Font.BOLD,20));
+        inToPre.setBounds(445,110,200,30);
+        inToPre.setBackground(Color.black);
+        inToPre.setForeground(Color.white);
+        inToPre.addActionListener(this);
+        add(inToPre);
+
+        // poToPre = new JButton("Postfix To Prefix");
+        // poToPre.setFont(new Font("Raleway",Font.BOLD,20));
+        // poToPre.setBounds(135,170,200,30);
+        // poToPre.setBackground(Color.black);
+        // poToPre.setForeground(Color.white);
+        // poToPre.addActionListener(this);
+        // add(poToPre);
+
+        // preToIn = new JButton("Prefix To Infix");
+        // preToIn.setFont(new Font("Raleway",Font.BOLD,20));
+        // preToIn.setBounds(445,170,200,30);
+        // preToIn.setBackground(Color.black);
+        // preToIn.setForeground(Color.white);
+        // preToIn.addActionListener(this);
+        // add(preToIn);
+
+        // poToIn = new JButton("Postfix To Infix");
+        // poToIn.setFont(new Font("Raleway",Font.BOLD,20));
+        // poToIn.setBounds(285,230,200,30);
+        // poToIn.setBackground(Color.black);
+        // poToIn.setForeground(Color.white);
+        // poToIn.addActionListener(this);
+        // add(poToIn);
+
+        exit = new JButton("EXIT");
+        exit.setBounds(320,300,130,30);
+        exit.setFont(new Font("Osward",Font.BOLD, 16));
+        exit.setBackground(Color.black);
+        exit.setForeground(Color.white);
+        exit.addActionListener(this);
+        add(exit);
+
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent ae){
+        // call InfixToPostfix class constructor
+        if(ae.getSource() == inToPo){
+            // call InfixToPostfix class constructor
+            new InfixToPostfix();
+        }else if(ae.getSource()==inToPre){
+            // call InfixToPostfix class constructor
+            new InfixToPrefix();
+        // }else if(ae.getSource() == poToPre){
+        //     new PostfixToPrefix();
+        // }else if(ae.getSource() == preToIn){
+        //     new PrefixToInfix();
+        // }else if(ae.getSource() == poToIn){
+        //     new PostfixToInfix();
+        }else if(ae.getSource() == exit){
+            System.exit(0);
+        }
+    }
+    public static void main(String[] args) {
+        new Main();
+    }
+}
