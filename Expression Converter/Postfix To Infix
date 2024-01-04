@@ -1,0 +1,168 @@
+// Java program to find infix for a given postfix.
+   // String exp = "ab*c+";
+import java.awt.event.ActionListener;
+import java.util.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+//-----------------------------------------------------------------------------------------
+
+
+class OperatorStack {
+    class Node {
+        char operator;
+        Node link;
+
+        
+        //  Creates a Node of Stack implemented by Singly Linked-List
+         
+        public Node(char operator) {
+            this.operator = operator;
+            this.link = null;
+        }
+    }
+
+    // top pointer, points topmost element of Stack
+    Node top = null;
+
+    
+     // @param x data to push into OperatorStack
+     
+    void push(char x) {
+        Node newNode = new Node(x);
+        newNode.link = top;
+        top = newNode;
+    }
+
+    
+      //removes top from OperandStack and  return topmost element of OperatorStack
+     
+    char pop() {
+        if (top == null) {
+            return '#';
+        } else {
+            char temp = top.operator;
+            top = top.link;
+            return temp;
+        }
+    }
+
+    char peek() {
+        if (top == null) {
+            return '#';
+        } else {
+            return top.operator;
+        }
+    }
+
+    
+    //  return boolean value that stack is empty or not
+     
+    boolean isEmpty() {
+        if (top == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+//----------------------------------------------------------------------------------------//
+class PostfixToInfix extends JFrame implements ActionListener
+{
+    JLabel text;
+	JTextField input,output;
+	JButton convert;
+	
+static boolean isOperand(char x)
+{
+	return (x >= 'a' && x <= 'z') ||
+			(x >= 'A' && x <= 'Z');
+}
+
+// Get Infix for a given postfix  expression
+static String getInfix(String exp)
+{
+	OperatorStack operators = new OperatorStack();
+	Stack<String> s = new Stack<String>();
+
+	for (int i = 0; i < exp.length(); i++)
+	{
+		// Push operands
+		if (isOperand(exp.charAt(i)))
+		{
+		s.push(exp.charAt(i) + "");
+		}
+
+		// We assume that input is a valid postfix and expect  an operator.
+		else
+		{
+			String op1 = s.peek();
+			s.pop();
+			String op2 = s.peek();
+			s.pop();
+			s.push("(" + op2 + exp.charAt(i) + op1 + ")");
+		}
+	}
+
+	// There must be a single element in stack now which is the required infix.
+	return s.peek();
+}
+
+    public PostfixToInfix(){
+        setLayout(null);
+        setSize(800, 480);
+        setLocation(250,100);
+        setTitle("CONVERTER");
+
+        getContentPane().setBackground(Color.cyan);
+
+        text = new JLabel("<HTML><u>Enter the POSTFIX below</u></HTML>");
+        text.setFont(new Font("Osward",Font.BOLD,35));
+        text.setBounds(200,90,600,40);
+        add(text);
+
+		input = new JTextField();
+		input.setBounds(200,140,350,30);
+		input.setFont(new Font("Osward",Font.BOLD,16));
+		add(input);
+
+		convert = new JButton("CONVERT");
+		convert.setBounds(300,200 ,150 ,30 );
+		convert.setFont(new Font("Raleway",Font.BOLD,16));
+		convert.addActionListener(this);
+		add(convert);
+
+		text = new JLabel("<HTML><u>OUTPUT</u></HTML>");
+        text.setFont(new Font("Osward",Font.BOLD,35));
+        text.setBounds(300,250,600,40);
+        add(text);
+
+        // String exp = "ab*c+";
+	    // System.out.println( getInfix(exp));
+
+		setVisible(true);
+	}
+	
+	public void actionPerformed(ActionEvent ae){
+		if(ae.getSource() == convert){
+
+			String in = input.getText();
+			String ans = getInfix(in);
+
+			output = new JTextField(ans);
+			output.setBounds(200,300,350,30);
+			output.setFont(new Font("Osward",Font.BOLD,16));
+			add(output);
+			
+		}
+	}
+public static void main(String args[])
+{
+	new PostfixToInfix();
+}
+}
+
+// This code is contributed by Arnab Kundu
