@@ -1,0 +1,148 @@
+import java.util.Scanner;
+
+public class Hangman_game {
+    
+    static String hidden_word = "terminator";
+    static int wordLength = hidden_word.length();
+    static String dollar = "$$$$$$$$$$";
+                  
+    static int lives = 6;
+    
+    // -------------------------------------------main Method--------------------------------------------
+
+    public static void main(String []args) {
+        Scanner sc = new Scanner(System.in);
+        
+        while(lives > 0 && dollar.contains("$")) {
+            System.out.println();
+            System.out.println("Guess the letter");
+            System.out.println(dollar);
+            String input = sc.next();
+            hang(input);
+        }
+    }
+    
+    // -----------------------------------------------LOGIC ---------------------------------------------
+
+    public static void hang(String guessed) {
+        String updatedollar = "";                                        // making an empty string
+        
+        for(int i = 0; i<wordLength ; i++) {
+            if(hidden_word.charAt(i) == guessed.charAt[0]) {
+                updatedollar = updatedollar + guessed.charAt(0);   // if both the charachter mactches
+            }else if(dollar.charAt(i) != '$') {
+                updatedollar = updatedollar + hidden_word.charAt(i);     // to save the previous entry in the string
+            }else {
+                updatedollar = updatedollar + "$";                       // if wrong input is entered 
+            }
+        }
+        
+        if(dollar.equals(updatedollar)) {   // dollar string contains dollar signs, if wrong input is entered we 
+            lives--;                        // there will be dollar in the updatedollar string. Hence both will 
+            drawHangman();                  // will be equal and life will decrease 
+        }else{
+            dollar = updatedollar;
+        }
+        
+        if(dollar.equals(hidden_word)) {
+
+            System.out.println("--------------------------------------------------------------");
+            System.out.println();
+            System.out.println("\t      #  Correct! you won  #");
+            System.out.println("\t  #  The word was "+hidden_word+"  #");
+            System.out.println();
+            System.out.println("--------------------------------------------------------------");
+        }
+    }
+    
+    // --------------------------------------method to draw hangman------------------------------------
+    
+    
+    public static void drawHangman() {
+        if(lives == 6) {
+         System.out.println("|----------");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+        }
+        else if(lives == 5) {
+         System.out.println("|----------");
+         System.out.println("|    |");
+         System.out.println("|    |");
+         System.out.println("|    O");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+        }
+        else if(lives == 4) {
+         System.out.println("|----------");
+         System.out.println("|    |");
+         System.out.println("|    |");
+         System.out.println("|    O");
+         System.out.println("|    |");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+        }
+        else if(lives == 3) {
+         System.out.println("|----------");
+         System.out.println("|    |");
+         System.out.println("|    |");
+         System.out.println("|    O");
+         System.out.println("|   -|");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+        }
+        else if(lives == 2) {
+         System.out.println("|----------");
+         System.out.println("|    |");
+         System.out.println("|    |");
+         System.out.println("|    O");
+         System.out.println("|   -|-");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+        }
+        else if(lives == 1) {
+         System.out.println("|----------");
+         System.out.println("|    |");
+         System.out.println("|    |");
+         System.out.println("|    O");
+         System.out.println("|   -|-");
+         System.out.println("|   /");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+        }
+        else{
+         System.out.println("|----------");
+         System.out.println("|    |");
+         System.out.println("|    |");
+         System.out.println("|    O");
+         System.out.println("|   -|-");
+         System.out.println("|   / \\");
+         System.out.println("|");
+         System.out.println("|");
+         System.out.println("|");
+
+         System.out.println("--------------------------------------------------------------");
+         System.out.println();
+         System.out.println("\t              #  Sorry!  #");
+         System.out.println("\t  #  You were not able to save the man  #");
+         System.out.println("\t       #  Better luck next time  #");
+         System.out.println("\t       #  The word was "+hidden_word+"  #");
+         System.out.println();
+         System.out.println("--------------------------------------------------------------");
+        }
+       }
+    
+}
