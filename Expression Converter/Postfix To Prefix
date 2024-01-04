@@ -1,0 +1,188 @@
+// Java Program to convert postfix to prefix
+// String post_exp = "ABC/-AK/L-*";
+
+import java.util.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+//-----------------------------------------------------------------------------------------
+
+class OperatorStack {
+    class Node {
+        char operator;
+        Node link;
+
+        
+         // Creates a Node of Stack implemented by Singly Linked-List
+         
+        public Node(char operator) {
+            this.operator = operator;
+            this.link = null;
+        }
+    }
+
+    // top pointer, points topmost element of Stack
+    Node top = null;
+
+    
+     // @param x data to push into OperatorStack
+     
+    void push(char x) {
+        Node newNode = new Node(x);
+        newNode.link = top;
+        top = newNode;
+    }
+
+    
+     // removes top from OperandStack and  return topmost element of OperatorStack
+     
+    char pop() {
+        if (top == null) {
+            return '#';
+        } else {
+            char temp = top.operator;
+            top = top.link;
+            return temp;
+        }
+    }
+
+    
+    char peek() {
+        if (top == null) {
+            return '#';
+        } else {
+            return top.operator;
+        }
+    }
+
+    
+    //  @return boolean value that stack is empty or not
+     
+    boolean isEmpty() {
+        if (top == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+//-----------------------------------------------------------------------------
+
+class PostfixToPrefix extends JFrame implements ActionListener{
+
+	JLabel text;
+	JTextField input,output;
+	JButton convert;
+
+	// function to check if character is operator or not
+	static boolean isOperator(char x)
+	{
+
+		switch (x) {
+		case '+':
+		case '-':
+		case '/':
+		case '*':
+			return true;
+		}
+		return false;
+	}
+
+	// Convert postfix to Prefix expression
+	static String postToPre(String post_exp)
+	{
+		Stack<String> s = new Stack<String>();
+		OperatorStack operators = new OperatorStack();
+
+		// length of expression
+		int length = post_exp.length();
+
+		// reading from right to left
+		for (int i = 0; i < length; i++) {
+
+			// check if symbol is operator
+			if (isOperator(post_exp.charAt(i))) {
+
+				// pop two operands from stack
+				String op1 = s.peek();
+				s.pop();
+				String op2 = s.peek();
+				s.pop();
+
+				// concat the operands and operator
+				String temp = post_exp.charAt(i) + op2 + op1;
+
+				// Push String temp back to stack
+				s.push(temp);
+			}
+
+			else {
+
+				// push the operand to the stack
+				s.push(post_exp.charAt(i) + "");
+			}
+		}
+
+		// concatenate all strings in stack and return the answer
+		String ans = "";
+		for (String i : s)
+			ans += i;
+		return ans;
+	}
+
+	public PostfixToPrefix(){
+		setLayout(null);
+        setSize(800, 480);
+        setLocation(250,100);
+        setTitle("CONVERTER");
+
+        getContentPane().setBackground(Color.cyan);
+
+        text = new JLabel("<HTML><u>Enter the POSTFIX below</u></HTML>");
+        text.setFont(new Font("Osward",Font.BOLD,35));
+        text.setBounds(200,90,600,40);
+        add(text);
+
+		input = new JTextField();
+		input.setBounds(200,140,350,30);
+		input.setFont(new Font("Osward",Font.BOLD,16));
+		add(input);
+
+		convert = new JButton("CONVERT");
+		convert.setBounds(300,200 ,150 ,30 );
+		convert.setFont(new Font("Raleway",Font.BOLD,16));
+		convert.addActionListener(this);
+		add(convert);
+
+		text = new JLabel("<HTML><u>OUTPUT</u></HTML>");
+        text.setFont(new Font("Osward",Font.BOLD,35));
+        text.setBounds(300,250,600,40);
+        add(text);
+
+		// String post_exp = "ABC/-AK/L-*";
+		// System.out.println("Prefix : "+ postToPre(post_exp));
+
+		setVisible(true);
+	}
+	
+	public void actionPerformed(ActionEvent ae){
+		if(ae.getSource() == convert){
+
+			String in = input.getText();
+			String ans = postToPre(in);
+
+			output = new JTextField(ans);
+			output.setBounds(200,300,350,30);
+			output.setFont(new Font("Osward",Font.BOLD,16));
+			add(output);
+			
+		}
+	}
+	
+	public static void main(String args[])
+	{
+		new PostfixToPrefix();
+	}
+}
