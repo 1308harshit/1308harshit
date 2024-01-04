@@ -1,0 +1,414 @@
+import java.util.Scanner;
+
+class Main {
+    // user variables
+    static String id,name,gender,address,email_id;
+    static String phone_no;
+
+    // hotel variables
+    static int standard_rooms = 0;
+    static int minimalist_rooms = 0;
+    static int deluxe_rooms = 0;
+    static int luxury_rooms = 0;
+    
+    static int count_sr = 0;
+    static int count_dr = 0;
+    static int count_mr = 0;
+    static int count_lr = 0;
+
+//         ------------------------------- ROOM INFORMATION -------------------------------  
+
+    static void room_info() 
+    {
+        System.out.println();
+
+        System.out.print("Standard room Info: ");
+        System.out.println(" It includes basic amenities such as a bed, a private bathroom, a desk, a chair, a wardrobe, and a telephone.\n CHARGES FOR HAVING A STANDARD ROOM FOR ONE NIGHT IS 2500/-.");
+        System.out.println();
+        System.out.print("Minimalist room Info: ");
+        System.out.println("It includes basic amenities with a more modern and streamlined design such as a bed, a private bathroom with basic toiletries, a desk, a chair, a wardrobe, a television, and a telephone.\n Some additional amenities such as free Wi-Fi, a mini-fridge, and a coffee make are also provided.\n CHARGES FOR HAVING A MINIMILISTOC ROOM FOR ONE NIGHT IS 4000/-.");
+        System.out.println();
+        System.out.print("Deluxe room Info: ");
+        System.out.println("Deluxe rooms would be typically larger than standard or minimalist providing additional facilities such as larger beds, private bathrooms with bathtubs or jacuzzi, a seating area,a safe and a balcony with additional to basi features as a work desk with a chair, a wardrobe or closet, a television, a telephone, a free wifi and a mini-fridge.\n CHARGES OF HAVING A DELUXE ROOM FOR ONE NIGHT IS 12000/-.");
+        System.out.println();
+        System.out.print("Luxury room Info : ");
+        System.out.println("Luxury rooms provide the highest level of comfort such as large and luxurious bed or beds, a spacious private bathroom with high-end toiletries, a seating area with comfortable chairs or sofas, a work desk with a chair, a wardrobe or closet, a television, a telephone, a mini-fridge, and a safe.\n The additional amenities provided are balcony or terrace with a stunning view, a fireplace, a hot tub or Jacuzzi, a private pool, or a personal butler or concierge service.\n CHARGES FOR HAVING A LUXURY ROOM FOR ONE NIGHT IS 28000/-."); 
+
+
+        System.out.println();
+    }
+
+//         ------------------------------- ROOM INFORMATION(END) -------------------------------  
+
+//         ------------------------------- TAKING USER INFORMATION -------------------------------  
+
+    void check_in() 
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println(" # Entry details will not be updated # ");
+
+        System.out.print("Identity proof: ");
+        id = sc.nextLine();
+
+        System.out.print("Enter Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter phone number: ");
+        phone_no = sc.nextLine();
+
+        System.out.print("Gender: ");
+        gender = sc.next();
+        sc.nextLine();
+
+        System.out.print("Enter Address: ");
+        address = sc.nextLine();
+
+        System.out.print("Enter Email id: ");
+        email_id = sc.nextLine();
+
+        System.out.println();
+    }
+//         ------------------------------- TAKING USER INFORMATION(END) -------------------------------  
+
+//         ------------------------------- DISPLAY INFORMATION -------------------------------
+
+void display() 
+{
+    System.out.println("---DISPLAYING DETAILS ---");
+    System.out.println("Identity proof  :" + id);
+
+    System.out.println("Name            : " + name);
+
+    System.out.println("phone no        : " + phone_no);
+
+    System.out.println("Gender          : " + gender);
+
+    System.out.println("Address         : " + address);
+
+    System.out.println("Email id        : " + email_id);
+    System.out.println();
+}
+//         ------------------------------- DISPLAY INFORMATION(END) ------------------------
+
+
+//         ------------------------------- SHOWING ROOM COUNT-------------------------------
+
+    void viewStandardRoomCount()
+    {
+        System.out.print("Number of Standard room(s) already booked: ");
+        System.out.println(count_sr);
+        System.out.println();
+    }
+
+    void viewDeluxeRoomCount()
+    {
+        System.out.print("Number of Deluxe room(s) already booked: ");
+        System.out.println(count_dr);
+        System.out.println();
+    }
+
+    void viewMinimalistRoomCount()
+    {
+        System.out.print("Number of Minimalist room(s) already booked: ");
+        System.out.println(count_mr);
+        System.out.println();
+    }
+
+    void viewLuxuryRoomCount()
+    {
+        System.out.print("Number of Luxury room(s) already booked: ");
+        System.out.println(count_lr);
+        System.out.println();
+    }
+
+//         ------------------------------- SHOWING ROOM COUNT (END) -------------------------------
+
+//         ------------------------------- SHOWING NEAR-BY LOCATION -------------------------------
+    
+    void nearbyLocation()
+    {
+    System.out.println();
+    System.out.println("Near by places to visit in UDAIPUR");
+    System.out.println("1.City Palace        : City palace is a wide and complex palace built over a peroid of nearly 400 years.");
+    System.out.println("2.Saheliyon ki bari  : Saheliyon-ki-Bari is a major garden and a popular tourist space");
+    System.out.println("3.Fateh sagar lake   : It is an artificial lake named after Maharana Fateh Singh of Udaipur and Mewar, constructed north-west of Udaipur, to the north of Lake Pichola in the 1680s");
+    System.out.println("4.The monsoon palace : The Monsoon Palace, also known as the Sajjan Garh Palace, is a hilltop palatial residence in the city of Udaipur, Rajasthan in India, overlooking the Fateh Sagar Lake. ");
+    System.out.println("5.Lake pichola       : Lake Pichola is an artificial fresh water lake, created in the year 1362, named after the nearby Picholi village. ");
+    System.out.println();
+    }
+
+//         ------------------------------- SHOWING NEAR-BY LOCATION(END) --------------------------
+
+//         ------------------------------- CALCULATOR --------------------------
+
+    void calculator() 
+    {
+
+	 int eroom;
+	 int edays;
+
+System.out.println("room types");
+System.out.println("1 : standard room      [ONE NIGHT STAY-2500rs]");
+System.out.println("2 : minimalist room    [ONE NIGHT STAY -4000rs]");
+System.out.println("3 : deluxe room        [ONE NIGHT STAY-12000rs]");
+System.out.println("4 : luxurious room     [ONE NIGHT STAY-28000rs]");
+
+Scanner sc=new Scanner(System.in); 
+System.out.println("enter your room type from above option");
+eroom=sc.nextInt();
+
+switch(eroom)
+{	
+	case 1:
+	System.out.println("enter number of days");
+    edays=sc.nextInt();
+	int sum=2500*edays;
+	System.out.println("amount you have to pay: "+sum);
+	break;
+	case 2:
+	System.out.println("enter number of days");
+	edays=sc.nextInt();
+	 sum=4000*edays;
+	 System.out.println("amount you have to pay: "+sum);
+	 break;
+	 case 3:
+	 System.out.println("enter number of days");
+	 edays=sc.nextInt();
+	 sum=12000*edays;
+	 System.out.println("amount you have to pay: "+sum);
+	 break;
+	 case 4:
+	 System.out.println("enter number of days");
+	 edays=sc.nextInt();
+	 sum=28000*edays;
+	 System.out.println("amount you have to pay: "+sum);
+     default : System.out.println("Invalid Input");
+	
+}
+}
+
+
+
+//         ------------------------------- CALCULATOR(END) ---------------------
+
+//         ------------------------------------ MAIN --------------------------
+    public static void main(String[]args)
+    {
+        Scanner sc = new Scanner(System.in);
+        Main mm = new Main();
+        // array for standard room
+        Main sr[] = new Main[10];
+        Main dr[] = new Main[10];
+        Main mr[] = new Main[10];
+        Main lr[] = new Main[10];
+
+         int n;        
+
+    do{ 
+        System.out.println("# CHECK-IN will only done by user # ");
+
+        System.out.println();
+        System.out.println();
+
+        System.out.println(" \t 1. -> ROOM'S INFORMATION AND CHECK IN<- ");
+        System.out.println(" \t 2. -> VIEW NEAR-BY LANDMARKS <- ");
+        System.out.println(" \t 3. -> CALCULATOR <- ");
+        System.out.println(" \t 4. -> CHECK-OUT <- ");
+        System.out.println(" \t 5. -> VIEW ROOMS ALREADY BOOKED <- ");
+        System.out.println(" \t 6. -> EXIT <- ");
+
+        System.out.println();
+
+        System.out.print("Enter the choice :");
+        n = sc.nextInt();
+        switch(n)
+            {
+            case 1 : room_info(); 
+                
+                    System.out.println("1. Standard room");
+                    System.out.println("2. Minimalist room");
+                    System.out.println("3. Deluxe room");
+                    System.out.println("4. Luxury room");
+                    System.out.println();
+                    System.out.print ("Enter which room do you want");
+                    
+                    int m = sc.nextInt();
+                    switch(m) 
+                    {
+                        case 1: 
+                        boolean srb = true;
+                        while(srb)
+                        {
+                            mm.viewStandardRoomCount();
+
+                            int i = 0;
+                            sr[i] = new Main();
+                            sr[i].check_in();
+                            sr[i].display();
+                            i++;
+                            count_sr ++;
+                            if(i > 10) 
+                            {
+                                srb = false;
+                                System.out.println("Rooms are full");
+                            }
+                            break;
+                        }
+                        break;
+
+                        case 2:
+                        boolean mrb = true;
+                        while(mrb == true)
+                        {
+                            mm.viewMinimalistRoomCount();
+
+                            int i = 0;
+                            mr[i] = new Main();
+                            mr[i].check_in();
+                            mr[i].display();
+                            i++;
+                            count_mr ++;
+                            if(i > 10) 
+                            {
+                                mrb = false;
+                                System.out.println("\tROOMS ARE FULL");
+                            }
+                           
+                            break;
+                        }
+                        break;
+
+                        case 3: 
+                        boolean drb = true;
+                        while(drb == true)
+                        {
+                            mm.viewDeluxeRoomCount();
+
+                            int i = 0;
+                            dr[i] = new Main();
+                            dr[i].check_in();
+                            dr[i].display();
+                            i++;
+                            count_dr ++;
+                            if(i > 10) 
+                            {
+                                drb = false;
+                                System.out.println("\tROOMS ARE FULL");
+                            }
+                           
+                            break;
+                        }
+                        break;
+
+                        case 4:
+                        boolean lrb = true;
+                        while(lrb == true)
+                        {
+                            mm.viewLuxuryRoomCount();
+
+                            int i = 0;
+                            lr[i] = new Main();
+                            lr[i].check_in();
+                            lr[i].display();
+                            i++;
+                            count_lr ++;
+                            if(i > 10) 
+                            {
+                                lrb = false;
+                                System.out.println("\tROOMS ARE FULL");
+                            }
+                           
+                            break;
+                        }
+                        break;
+                            
+                    }
+                    break;
+                    
+                    case 2:
+                    mm.nearbyLocation();
+                    break;
+
+                    case 3:
+                    mm.calculator();
+                    break;
+
+                    case 4:
+
+                    System.out.println("1. standard room");
+                    System.out.println("2. Minimalist room");
+                    System.out.println("3. Deluxe room");
+                    System.out.println("4. Luxury room");
+                    System.out.println();
+                    System.out.print("Which type of room are you checking out: ");
+                    
+                    int co = sc.nextInt();
+                    
+                    switch(co) 
+                    {
+                        case 1: 
+                        count_sr--;
+                        if(count_sr<0)
+                        {
+                            System.out.println("ALL ROOMS ARE ALREADY EMPTY");
+                        }
+                        mm.calculator();
+                        System.out.println();
+                        System.out.println("    # THANK YOU FOR THE VISIT, ENJOY YOUR JOURNEY AHEAD #");
+                        break;
+
+                        case 2:
+                        count_mr--;
+                        if(count_mr<0)
+                        {
+                            System.out.println("ALL ROOMS ARE ALREADY EMPTY");
+                        }
+                        mm.calculator();
+                        System.out.println();
+                        System.out.println("    # THANK YOU FOR THE VISIT, ENJOY YOUR JOURNEY AHEAD #");
+                        break;
+
+                        case 3:
+                        count_dr--;
+                        if(count_dr<0)
+                        {
+                            System.out.println("ALL ROOMS ARE ALREADY EMPTY");
+                        }
+                        mm.calculator();
+                        System.out.println();
+                        System.out.println("    # THANK YOU FOR THE VISIT, ENJOY YOUR JOURNEY AHEAD #");
+                        break;
+
+                        case 4:
+                        count_lr--;
+                        if(count_lr<0)
+                        {
+                            System.out.println("ALL ROOMS ARE ALREADY EMPTY");
+                        }
+                        mm.calculator();
+                        System.out.println();
+                        System.out.println("    # THANK YOU FOR THE VISIT, ENJOY YOUR JOURNEY AHEAD #");
+                        break;
+
+                        default : System.out.println("Incorrect input");
+                        break;
+
+                    }
+
+                    case 5: System.out.println();
+                            mm.viewStandardRoomCount();
+                            mm.viewDeluxeRoomCount();
+                            mm.viewMinimalistRoomCount();
+                            mm.viewLuxuryRoomCount();
+
+                    case 6: 
+                    System.out.println("\t THANK YOU FOR VISITING");
+                    break;
+
+                    default : System.out.println("Incorrect input");
+                    break;
+            }
+        }while(n != 6);
+    }
+}
