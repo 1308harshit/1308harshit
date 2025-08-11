@@ -18,8 +18,10 @@ jobs:
           github_user_name: 1308harshit
           svg_out_path: dist/github-contribution-grid-snake-dark.svg
 
-      - name: Push to GitHub
-        uses: adityaraj66/Blazing@v1
-        with:
-          filepath: dist/github-contribution-grid-snake-dark.svg
-          github_token: ${{ secrets.GH_PAT }}
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add dist/
+          git commit -m "Update snake animation" || exit 0
+          git push

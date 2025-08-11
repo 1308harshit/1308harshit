@@ -20,35 +20,63 @@
 
 <br>
 
-## 🚀 **About Me**
-
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=1308harshit&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&icon_color=8B5CF6&show_icons=true&include_all_commits=true&count_private=true" alt="GitHub Stats" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&color=6366F1&line=8B5CF6&point=EC4899&area=true&hide_title=false" alt="Contribution Graph" />
 </div>
 
 <br>
 
+## 🚀 **About Me**
+Hi, I’m Harshit Khatsuriya — a DevOps & Cloud enthusiast passionate about building scalable, automated, and high-performance systems.
+
+💻 Skilled in AWS, Docker, Terraform, GitHub Actions, and full-stack development.
+
+🛠 Experienced in CI/CD automation, cloud infrastructure provisioning, and containerized deployments.
+
+📈 Hands-on with projects ranging from Strapi CMS & Medusa E-commerce deployments on AWS ECS to AI-powered full-stack applications.
+
+🏆 Competitive programmer with ratings on Codeforces (1024), LeetCode (1492), and HackerRank 5★ in Python, C++, and DSA.
+
+🌱 Constantly learning, mentoring, and experimenting with new tech to solve real-world problems.
+
+### 🏢 **Organizations & Collaborations**
+
+#### **Companies & Organizations I've Worked With**
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&layout=compact&langs_count=8&card_width=600" alt="Top Languages" />
+  <img src="https://img.shields.io/badge/Google_Cloud_Arcade-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud Arcade" />
+  <img src="https://img.shields.io/badge/PearlThoughts-FF6B35?style=for-the-badge&logo=pearl&logoColor=white" alt="PearlThoughts" />
+  <img src="https://img.shields.io/badge/HelloMainland-00C4B4?style=for-the-badge&logo=hello&logoColor=white" alt="HelloMainland" />
+  <img src="https://img.shields.io/badge/Schedula-8B5CF6?style=for-the-badge&logo=calendar&logoColor=white" alt="Schedula" />
+  <img src="https://img.shields.io/badge/Wildest_Future-FF6B35?style=for-the-badge&logo=rocket&logoColor=white" alt="Wildest Future" />
 </div>
 
+#### 🏆 **Achievements & Certifications**
+
+<div align="center">
+  <a href="https://www.hackerrank.com/profile/harshitkhatsuri1" target="_blank">
+    <img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white" alt="HackerRank" />
+  </a>
+  
+  <a href="https://leetcode.com/u/khatsuriyaharshit/" target="_blank">
+    <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" alt="LeetCode" />
+  </a>
+  
+  <a href="https://codeforces.com/profile/harshit_1308" target="_blank">
+    <img src="https://img.shields.io/badge/Codeforces-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces" />
+  </a>
+  
+  <a href="https://auth.geeksforgeeks.org/user/khatsuriye8xz" target="_blank">
+    <img src="https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks" />
+  </a>
+</div>
 <br>
 
 ## 🎯 **What I'm Currently Building**
-- 🌱 **Learning**: Advanced Java, Python, DSA, Data Analytics, DBMS, MySQL, Frontend Development
 - 🔥 **Focusing**: System Design, Cloud Architecture, Microservices
 - 🚀 **Exploring**: AI/ML, Blockchain, DevOps, Cybersecurity
-
-### 💡 **Expertise Areas**
-- **Backend Development**: Java, Python, C, Database Design
-- **Frontend Technologies**: HTML5, CSS3, Bootstrap, Flutter
-- **Cloud & DevOps**: AWS, Azure, Git, CI/CD
-- **Data & Analytics**: MySQL, PostgreSQL, Oracle, Data Analysis
-
 <br>
 
 ## 🛠️ **Tech Stack & Tools**
-
 ### **Programming Languages**
 <div align="center">
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
@@ -57,7 +85,7 @@
   <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
   <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-   
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="SQL" />
 </div>
 
 ### **Frontend Development**
@@ -78,6 +106,7 @@
   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
   <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
   <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
+
 </div>
 
 ### **Databases**
@@ -144,58 +173,6 @@
   <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter" />
 </div>
 
-<br>
-
-## 📊 **Coding Journey**
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&color=6366F1&line=8B5CF6&point=EC4899&area=true&hide_title=false" alt="Contribution Graph" />
-</div>
-
-<br>
-
-## 🏆 **Achievements & Certifications**
-
-<div align="center">
-  <img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white" alt="HackerRank" />
-  <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" alt="LeetCode" />
-  <img src="https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks" />
-</div>
-
-<br>
-
-## 🌟 **Featured Projects**
-
-<div align="center">
-  <table>
-    <tr>
-      <td width="50%">
-        <h3 align="center">🚀 Project 1</h3>
-        <div align="center">
-          <a href="#" target="_blank">
-            <img src="https://github-readme-stats.vercel.app/api/pin/?username=1308harshit&repo=project1&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF" alt="Project 1" />
-          </a>
-        </div>
-      </td>
-      <td width="50%">
-        <h3 align="center">💡 Project 2</h3>
-        <div align="center">
-          <a href="#" target="_blank">
-            <img src="https://github-readme-stats.vercel.app/api/pin/?username=1308harshit&repo=project2&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF" alt="Project 2" />
-          </a>
-        </div>
-      </td>
-    </tr>
-  </table>
-</div>
-
-<br>
-
-## 📈 **GitHub Analytics**
-
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=1308harshit&theme=radical" alt="Profile Details" />
-</div>
 
 <br>
 
@@ -223,298 +200,23 @@
 
 <br>
 
-## 🎯 **Coding Platforms**
-
-<div align="center">
-  <a href="https://www.hackerrank.com/profile/harshitkhatsuri1" target="_blank">
-    <img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white" alt="HackerRank" />
-  </a>
-  
-  <a href="https://leetcode.com/u/khatsuriyaharshit/" target="_blank">
-    <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" alt="LeetCode" />
-  </a>
-  
-  <a href="https://codeforces.com/profile/harshit_1308" target="_blank">
-    <img src="https://img.shields.io/badge/Codeforces-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces" />
-  </a>
-  
-  <a href="https://auth.geeksforgeeks.org/user/khatsuriye8xz" target="_blank">
-    <img src="https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks" />
-  </a>
-  
-  <a href="https://codepen.io/dragun1308" target="_blank">
-    <img src="https://img.shields.io/badge/CodePen-000000?style=for-the-badge&logo=codepen&logoColor=white" alt="CodePen" />
-  </a>
-</div>
-
-<br>
-
-## 📊 **Weekly Development Breakdown (IST)**
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&langs_count=6&layout=compact&custom_title=Weekly%20Development%20Breakdown%20(IST%20-%20UTC%20%2B5:30)" alt="WakaTime Stats" />
-</div>
-
-<br>
-
-## 🔥 **Current Contributions & Activity**
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=1308harshit&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&icon_color=8B5CF6&show_icons=true&include_all_commits=true&count_private=true" alt="GitHub Stats" />
-</div>
-
-<br>
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&layout=compact&langs_count=8&card_width=600" alt="Top Languages" />
-</div>
-
-<br>
-
-## 🚀 **Pull Requests & Contributions**
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=1308harshit&repo=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF" alt="Profile Repository" />
-</div>
-
-<br>
-
-### 📈 **Contribution Metrics**
-- **Total Commits**: [Auto-updated via GitHub Stats above]
-- **Pull Requests**: [Auto-updated via GitHub Stats above]
-- **Issues Created**: [Auto-updated via GitHub Stats above]
-- **Code Reviews**: [Auto-updated via GitHub Stats above]
-
-<br>
-
-## 🌟 **Merged Pull Requests & Open Source Contributions**
-
-### **🎯 Recent Merged PRs**
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=1308harshit&repo=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF" alt="Profile Repository" />
-</div>
-
-### **🔧 Contribution Highlights**
-- 🌟 **Active Open Source Contributor** with multiple merged PRs
-- 🚀 **Bug Fixes & Feature Implementations** across various projects
-- 📚 **Documentation Improvements** and code quality enhancements
-- 🤝 **Community Support** through code reviews and mentorship
-- 💻 **Cross-Platform Development** experience
-- 🌐 **International Collaboration** with developers worldwide
-
-### **🏆 Open Source Achievements**
-- **Hacktoberfest** participant and contributor
-- **First Contributions** to major open source projects
-- **Code Reviews** and pull request assistance
-- **Bug Reports** and issue tracking
-- **Feature Requests** and enhancement proposals
-
-<br>
-
-## 📊 **Contribution Analytics**
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&layout=compact&langs_count=8&card_width=600" alt="Top Languages" />
-</div>
-
-<br>
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=1308harshit&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&icon_color=8B5CF6&show_icons=true&include_all_commits=true&count_private=true" alt="GitHub Stats" />
-</div>
-
-<br>
-
-## 🏢 **Organizations & Collaborations**
-
-### **Current Organizations**
-<div align="center">
-  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  <img src="https://img.shields.io/badge/Open_Source-6BA539?style=for-the-badge&logo=open-source-initiative&logoColor=white" alt="Open Source" />
-  <img src="https://img.shields.io/badge/Student_Developer-00C4B4?style=for-the-badge&logo=student&logoColor=white" alt="Student Developer" />
-  <img src="https://img.shields.io/badge/Community-FF6B6B?style=for-the-badge&logo=community&logoColor=white" alt="Community" />
-</div>
-
-### **Companies & Organizations I've Worked With**
-<div align="center">
-  <img src="https://img.shields.io/badge/Google_Cloud_Arcade-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud Arcade" />
-  <img src="https://img.shields.io/badge/PearlThoughts-FF6B35?style=for-the-badge&logo=pearl&logoColor=white" alt="PearlThoughts" />
-  <img src="https://img.shields.io/badge/HelloMainland-00C4B4?style=for-the-badge&logo=hello&logoColor=white" alt="HelloMainland" />
-  <img src="https://img.shields.io/badge/Schedula-8B5CF6?style=for-the-badge&logo=calendar&logoColor=white" alt="Schedula" />
-</div>
-
-### **Open Source Contributions**
-- 🌟 **Active Contributor** to various open-source projects
-- 🔧 **Bug Fixes** and feature implementations
-- 📚 **Documentation** improvements and updates
-- 🤝 **Community Support** and mentorship
-- 🚀 **Hacktoberfest** participant and contributor
-
-<br>
-
-## 🎯 **Recent Achievements**
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=1308harshit&theme=radical&no-frame=true&no-bg=false&margin-w=4&margin-h=4&row=1&column=7&rank=SECRET,SSS,SS,S,AAA,AA,A" alt="GitHub Trophies" />
-</div>
-
-<br>
-
-## 📊 **Detailed Analytics**
-
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=1308harshit&theme=radical" alt="Repos per Language" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=1308harshit&theme=radical" alt="Most Commit Language" />
-</div>
-
-<br>
-
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=1308harshit&theme=radical" alt="GitHub Stats" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=1308harshit&theme=radical&utcOffset=5.5" alt="Productive Time (IST)" />
-</div>
-
-<br>
-
-## 🎯 **GitHub Readme Stats Showcase**
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=1308harshit&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&icon_color=8B5CF6&show_icons=true&include_all_commits=true&count_private=true&hide=contributions,issues&custom_title=Harshit%27s%20GitHub%20Statistics" alt="GitHub Stats" />
-</div>
-
-<br>
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&layout=compact&langs_count=8&card_width=600&hide=html,css,scss&custom_title=Top%20Programming%20Languages" alt="Top Languages" />
-</div>
-
-<br>
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/commit-activity?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&custom_title=Commit%20Activity%20Pattern" alt="Commit Activity" />
-</div>
-
-<br>
-
-## 🚀 **Enhanced Contribution Analytics**
-
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF" alt="Profile Details" />
-</div>
-
-<br>
-
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=1308harshit&theme=radical&utcOffset=5.5&custom_title=Most%20Productive%20Time%20(IST)" alt="Productive Time (IST)" />
-</div>
-
-<br>
-
-## 🔍 **Contribution Troubleshooting & Real Stats**
-
-### **📊 Current GitHub API Stats**
-> **Note:** The GitHub API sometimes doesn't count all contributions correctly. Here's what we're seeing vs. what should be:
-
-- **Total Commits**: 220+ (✅ Accurate)
-- **Pull Requests**: 1 (❌ **Underestimated** - You have 50+ PRs)
-- **Total Issues**: 0 (❌ **Underestimated**)
-- **Stars Earned**: 0 (❌ **Underestimated**)
-
-### **🚀 Why This Happens:**
-1. **Private Repositories** - Contributions to private repos aren't always counted
-2. **Fork Contributions** - PRs to other repositories might not show up
-3. **Organization Repos** - Work in company/organization repositories
-4. **API Caching** - GitHub's API sometimes has delayed updates
-5. **Multiple Accounts** - Contributions under different usernames
-
-### **💡 Solutions to Try:**
-1. **Check your actual PRs** at: https://github.com/pulls?q=author:1308harshit
-2. **Verify all repositories** you've contributed to
-3. **Check organization contributions** if you work with companies
-4. **Wait for API refresh** - sometimes takes 24-48 hours
-
-### **🌟 Your Actual Contributions (Self-Reported):**
-- **Total Pull Requests**: 50+ (including merged PRs)
-- **Open Source Projects**: Multiple contributions
-- **Bug Fixes**: Various projects and repositories
-- **Feature Implementations**: Across different codebases
-- **Code Reviews**: Active participation in community
-
-<br>
-
-## 🔐 **Real-Time GitHub API Stats (Using PAT)**
-
-### **📊 How to Get Your Real Stats:**
-You can use your Personal Access Token to get accurate statistics including private contributions:
-
-```bash
-# Get your total PR count (including private repos)
-curl -s -H "Authorization: Bearer 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" \
-     -H "Accept: application/vnd.github+json" \
-     "https://api.github.com/search/issues?q=type:pr+author:1308harshit" \
-| jq '.total_count'
-
-# Get your total commits (including private repos)
-curl -s -H "Authorization: Bearer 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" \
-     -H "Accept: application/vnd.github+json" \
-     "https://api.github.com/users/1308harshit" \
-| jq '.public_repos, .total_private_repos'
-```
-
-### **🔍 What This Token Reveals:**
-- **Private Repository Contributions** - Work in private company repos
-- **Organization Contributions** - Contributions to Google Cloud Arcade, PearlThoughts, etc.
-- **Fork Contributions** - PRs to other repositories
-- **Real PR Count** - Your actual 50+ pull requests
-- **Private Commits** - All your development work
-
-### **⚠️ Security Note:**
-> **Important:** This token is for demonstration purposes. In production, use environment variables and never expose tokens in public repositories.
-
-### **📈 Expected Real Numbers:**
-- **Total Pull Requests**: 50+ (vs. API showing 1)
-- **Total Commits**: 500+ (vs. API showing 220)
-- **Private Contributions**: Significant work in company repositories
-- **Organization Work**: Google Cloud Arcade, PearlThoughts, HelloMainland, Schedula
-
-<br>
-
-## 📅 **Commit Activity Timeline (Indian Standard Time)**
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&color=6366F1&line=8B5CF6&point=EC4899&area=true&hide_title=false&custom_title=Commit%20Activity%20(IST%20-%20UTC%20%2B5:30)" alt="Commit Activity Graph" />
-</div>
-
-<br>
-
-## 🕐 **Daily Commit Pattern (IST)**
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/commit-activity?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF" alt="Daily Commit Pattern" />
-</div>
-
-<br>
-
 ## 🎯 **Random Dev Quote**
 
 <div align="center">
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random Dev Quote" />
 </div>
-
 <br>
 
 ## 🌟 **Visitor Counter**
-
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=1308harshit&label=Profile%20Views&color=6366F1&style=for-the-badge" alt="Profile Views" />
 </div>
-
 <br>
 
 ---
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=18&pause=3000&color=8B5CF6&center=true&vCenter=true&width=400&height=30&lines=Thanks+for+visiting!+%F0%9F%98%8A;Let's+build+something+amazing+together+%F0%9F%9A%80;Happy+Coding!+%F0%9F%92%BB" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=16&pause=3000&color=8B5CF6&center=true&vCenter=true&width=400&height=30&lines=Thanks+for+visiting!+%F0%9F%98%8A;Let's+build+something+amazing+together+%F0%9F%9A%80;Happy+Coding!+%F0%9F%92%BB" alt="Typing SVG" />
 </div>
 
 <div align="center">
