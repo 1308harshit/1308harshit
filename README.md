@@ -83,28 +83,6 @@ Hi, I’m Harshit Khatsuriya — a DevOps & Cloud enthusiast passionate about bu
 - **Total Commits**: [Auto-updated via GitHub Actions]
 - **Last Updated**: [Auto-updated via GitHub Actions]
 
-### **🌟 Your Actual Work (Beyond Public Stats):**
-- **Total Development Work**: 500+ commits across all repositories
-- **Company Projects**: Significant contributions to PearlThoughts, HelloMainland, Schedula
-- **DevOps Engineering**: Infrastructure, CI/CD, and automation work
-- **Private Contributions**: Work in company and organization repositories
-- **Cross-Platform Development**: Multiple technologies and frameworks
-
-### **🎯 Real Contribution Numbers (Based on Your Activity):**
-> **From your August 2025 contribution activity:**
-
-- **Schedula-Services**: 14 merged PRs + 25 commits
-- **PearlThoughts**: 1 merged PR + 5 commits  
-- **HelloMainland**: 1 open PR + 1 commit
-- **Butlermax-Apps**: 1 open PR
-- **Your Personal Repos**: 2 commits
-
-**Estimated Totals:**
-- **Total PRs**: 17+ (14 merged + 3 open)
-- **August Commits**: 32+ across organizations
-- **Active Organizations**: 4 companies
-- **Real Contribution Scale**: Much higher than public API shows!
-
 > *This is why the public API only shows 1 PR - it can't see your work in private company repositories!*
 
 <br>
