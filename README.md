@@ -77,11 +77,11 @@ Hi, I’m Harshit Khatsuriya — a DevOps & Cloud enthusiast passionate about bu
 > **🔄 This section is automatically updated every 6 hours by GitHub Actions**
 
 ### **📊 Complete GitHub Statistics (Including Private Repos)**
-- **Total Pull Requests**: [Auto-updated via GitHub Actions]
-- **Public Repositories**: [Auto-updated via GitHub Actions]  
-- **Private Repositories**: [Auto-updated via GitHub Actions]
-- **Total Commits**: [Auto-updated via GitHub Actions]
-- **Last Updated**: [Auto-updated via GitHub Actions]
+- **Total Pull Requests**: **101**
+- **Public Repositories**: **32**  
+- **Private Repositories**: **2**
+- **Total Commits**: **358**
+- **Last Updated**: **2025-08-11 13:17 UTC**
 
 ### **🌟 Your Actual Work (Beyond Public Stats):**
 - **Total Development Work**: 500+ commits across all repositories
