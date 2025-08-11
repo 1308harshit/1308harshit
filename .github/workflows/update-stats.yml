@@ -5,12 +5,17 @@ on:
     - cron: '0 */6 * * *'  # Every 6 hours
   workflow_dispatch: # Manual trigger
 
+permissions:
+  contents: write
+
 jobs:
   update-stats:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
 
       - name: Get Private GitHub Stats
         id: get-stats
@@ -48,7 +53,6 @@ jobs:
 
       - name: Update README with Real Stats
         run: |
-          # Update README with real statistics
           PR_COUNT="${{ steps.get-stats.outputs.PR_COUNT }}"
           PUBLIC_REPOS="${{ steps.get-stats.outputs.PUBLIC_REPOS }}"
           PRIVATE_REPOS="${{ steps.get-stats.outputs.PRIVATE_REPOS }}"
@@ -75,4 +79,4 @@ jobs:
           git config --local user.name "GitHub Action"
           git add README.md
           git commit -m "Update README with real GitHub statistics: ${{ steps.get-stats.outputs.PR_COUNT }} PRs, ${{ steps.get-stats.outputs.PRIVATE_REPOS }} private repos" || exit 0
-          git push
+          git push origin main
