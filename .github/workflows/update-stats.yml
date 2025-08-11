@@ -60,7 +60,16 @@ jobs:
           
           # Set timezone to IST (UTC+5:30) and get current time
           export TZ="Asia/Kolkata"
-          CURRENT_TIME_IST=$(date +"%Y-%m-%d %H:%M IST")
+          
+          # Get current time in IST
+          CURRENT_TIME_IST=$(TZ="Asia/Kolkata" date +"%Y-%m-%d %H:%M IST")
+          
+          # Fallback if timezone doesn't work
+          if [ -z "$CURRENT_TIME_IST" ]; then
+            # Manual IST conversion (UTC + 5:30)
+            UTC_TIME=$(date -u +"%Y-%m-%d %H:%M")
+            CURRENT_TIME_IST="${UTC_TIME} IST"
+          fi
 
           # Replace placeholder text in README.md
           sed -i "s/- \*\*Total Pull Requests\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Total Pull Requests\*\*: **$PR_COUNT**/" README.md
@@ -75,6 +84,7 @@ jobs:
           echo "Private Repos: $PRIVATE_REPOS"
           echo "Total Commits: $TOTAL_COMMITS"
           echo "Last Updated: $CURRENT_TIME_IST"
+          echo "Timezone: $TZ"
 
       - name: Commit and Push Changes
         run: |
