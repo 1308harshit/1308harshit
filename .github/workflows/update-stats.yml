@@ -57,21 +57,24 @@ jobs:
           PUBLIC_REPOS="${{ steps.get-stats.outputs.PUBLIC_REPOS }}"
           PRIVATE_REPOS="${{ steps.get-stats.outputs.PRIVATE_REPOS }}"
           TOTAL_COMMITS="${{ steps.get-stats.outputs.TOTAL_COMMITS }}"
-          CURRENT_TIME=$(date -u +"%Y-%m-%d %H:%M UTC")
+          
+          # Set timezone to IST (UTC+5:30) and get current time
+          export TZ="Asia/Kolkata"
+          CURRENT_TIME_IST=$(date +"%Y-%m-%d %H:%M IST")
 
           # Replace placeholder text in README.md
           sed -i "s/- \*\*Total Pull Requests\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Total Pull Requests\*\*: **$PR_COUNT**/" README.md
           sed -i "s/- \*\*Public Repositories\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Public Repositories\*\*: **$PUBLIC_REPOS**/" README.md
           sed -i "s/- \*\*Private Repositories\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Private Repositories\*\*: **$PRIVATE_REPOS**/" README.md
           sed -i "s/- \*\*Total Commits\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Total Commits\*\*: **$TOTAL_COMMITS**/" README.md
-          sed -i "s/- \*\*Last Updated\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Last Updated\*\*: **$CURRENT_TIME**/" README.md
+          sed -i "s/- \*\*Last Updated\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Last Updated\*\*: **$CURRENT_TIME_IST**/" README.md
 
           echo "Updated README with real stats:"
           echo "Total PRs: $PR_COUNT"
           echo "Public Repos: $PUBLIC_REPOS"
           echo "Private Repos: $PRIVATE_REPOS"
           echo "Total Commits: $TOTAL_COMMITS"
-          echo "Last Updated: $CURRENT_TIME"
+          echo "Last Updated: $CURRENT_TIME_IST"
 
       - name: Commit and Push Changes
         run: |

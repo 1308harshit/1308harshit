@@ -74,7 +74,7 @@ Hi, I’m Harshit Khatsuriya — a DevOps & Cloud enthusiast passionate about bu
 
 ## 🔍 **Real GitHub Statistics (Auto-Updated)**
 
-> **🔄 This section is automatically updated every 6 hours by GitHub Actions**
+> **🔄 This section is automatically updated every 6 hours by GitHub Actions (Time shown in IST)**
 
 ### **📊 Complete GitHub Statistics (Including Private Repos)**
 - **Total Pull Requests**: **101**
