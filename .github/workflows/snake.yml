@@ -1,0 +1,25 @@
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate Snake
+        uses: Platane/snk@master
+        id: snake-gif
+        with:
+          github_user_name: 1308harshit
+          svg_out_path: dist/github-contribution-grid-snake-dark.svg
+
+      - name: Push to GitHub
+        uses: adityaraj66/Blazing@v1
+        with:
+          filepath: dist/github-contribution-grid-snake-dark.svg
+          github_token: ${{ secrets.GH_PAT }}

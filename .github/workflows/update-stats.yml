@@ -1,0 +1,51 @@
+name: Update GitHub Stats
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get Real GitHub Stats
+        id: get-stats
+        run: |
+          # Get total PR count (including private repos)
+          PR_COUNT=$(curl -s -H "Authorization: Bearer ${{ secrets.GH_PAT }}" \
+               -H "Accept: application/vnd.github+json" \
+               "https://api.github.com/search/issues?q=type:pr+author:1308harshit" \
+               | jq -r '.total_count')
+          
+          # Get user info including private repos
+          USER_INFO=$(curl -s -H "Authorization: Bearer ${{ secrets.GH_PAT }}" \
+               -H "Accept: application/vnd.github+json" \
+               "https://api.github.com/users/1308harshit")
+          
+          PUBLIC_REPOS=$(echo $USER_INFO | jq -r '.public_repos')
+          PRIVATE_REPOS=$(echo $USER_INFO | jq -r '.total_private_repos')
+          
+          echo "PR_COUNT=$PR_COUNT" >> $GITHUB_OUTPUT
+          echo "PUBLIC_REPOS=$PUBLIC_REPOS" >> $GITHUB_OUTPUT
+          echo "PRIVATE_REPOS=$PRIVATE_REPOS" >> $GITHUB_OUTPUT
+          
+          echo "Real Stats:"
+          echo "Total PRs: $PR_COUNT"
+          echo "Public Repos: $PUBLIC_REPOS"
+          echo "Private Repos: $PRIVATE_REPOS"
+
+      - name: Update README with Real Stats
+        run: |
+          # This step would update your README with the real stats
+          # For now, we'll just log them
+          echo "Real GitHub Statistics:"
+          echo "Total Pull Requests: ${{ steps.get-stats.outputs.PR_COUNT }}"
+          echo "Public Repositories: ${{ steps.get-stats.outputs.PUBLIC_REPOS }}"
+          echo "Private Repositories: ${{ steps.get-stats.outputs.PRIVATE_REPOS }}"
+          
+          # You can add logic here to update your README with these real numbers
+          # For example, replace placeholder text with actual values
