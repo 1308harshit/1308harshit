@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=28&pause=1000&color=6366F1&center=true&vCenter=true&width=600&height=50&lines=Hello%2C+World!+%F0%9F%91%8B;I'm+Harshit+Khatsuriya;Welcome+to+my+Digital+Universe+%F0%9F%8C%9E" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=28&pause=1000&color=6366F1&center=true&vCenter=true&width=800&height=50&lines=Hello%2C+World!+%F0%9F%91%8B;I'm+Harshit+Khatsuriya;Welcome+to+my+Digital+Universe+%F0%9F%8C%9E" alt="Typing SVG" />
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=400&size=20&pause=2000&color=8B5CF6&center=true&vCenter=true&width=500&height=30&lines=Software+Engineer+%7C+Problem+Solver+%7C+Innovator;Full-Stack+Developer+%7C+Cloud+Enthusiast+%7C+Tech+Explorer;Passionate+about+creating+impactful+digital+solutions" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=400&size=20&pause=2000&color=8B5CF6&center=true&vCenter=true&width=900&height=30&lines=Software+Engineer+%7C+Problem+Solver+%7C+Innovator;Full-Stack+Developer+%7C+Cloud+Enthusiast+%7C+Tech+Explorer;Passionate+about+creating+impactful+digital+solutions" alt="Typing SVG" />
 </div>
 
 <br>
@@ -29,12 +29,12 @@
 <br>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&layout=compact&langs_count=8&card_width=400" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&layout=compact&langs_count=8&card_width=600" alt="Top Languages" />
 </div>
 
 <br>
 
-### 🎯 **What I'm Currently Building**
+## 🎯 **What I'm Currently Building**
 - 🌱 **Learning**: Advanced Java, Python, DSA, Data Analytics, DBMS, MySQL, Frontend Development
 - 🔥 **Focusing**: System Design, Cloud Architecture, Microservices
 - 🚀 **Exploring**: AI/ML, Blockchain, DevOps, Cybersecurity
@@ -73,7 +73,7 @@
 
 ### **Backend & Frameworks**
 <div align="center">
-<img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
   <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" />
   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
   <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
@@ -266,7 +266,7 @@
 <br>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&layout=compact&langs_count=8&card_width=400" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&layout=compact&langs_count=8&card_width=600" alt="Top Languages" />
 </div>
 
 <br>
@@ -314,7 +314,7 @@
 ## 📊 **Contribution Analytics**
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&layout=compact&langs_count=8&card_width=400" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&layout=compact&langs_count=8&card_width=600" alt="Top Languages" />
 </div>
 
 <br>
@@ -385,7 +385,7 @@
 <br>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&layout=compact&langs_count=8&card_width=400&hide=html,css,scss&custom_title=Top%20Programming%20Languages" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&title_color=6366F1&text_color=FFFFFF&layout=compact&langs_count=8&card_width=600&hide=html,css,scss&custom_title=Top%20Programming%20Languages" alt="Top Languages" />
 </div>
 
 <br>
