@@ -102,12 +102,62 @@ jobs:
             fi
           fi
 
-          # Replace placeholder text in README.md
-          sed -i "s/- \*\*Total Pull Requests\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Total Pull Requests\*\*: **$PR_COUNT**/" README.md
-          sed -i "s/- \*\*Public Repositories\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Public Repositories\*\*: **$PUBLIC_REPOS**/" README.md
-          sed -i "s/- \*\*Private Repositories\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Private Repositories\*\*: **$PRIVATE_REPOS**/" README.md
-          sed -i "s/- \*\*Total Commits\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Total Commits\*\*: **$TOTAL_COMMITS**/" README.md
-          sed -i "s/- \*\*Last Updated\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Last Updated\*\*: **$CURRENT_TIME_IST**/" README.md
+          # Update README.md with real stats (handles both placeholders and existing values)
+          echo "Attempting to update stats in README.md..."
+          
+          # Backup original README for debugging
+          cp README.md README.md.backup
+          
+          # Try to replace placeholders first, then existing values
+          # Total Pull Requests
+          if grep -q "- \*\*Total Pull Requests\*\*: \[Auto-updated via GitHub Actions\]" README.md; then
+            sed -i "s/- \*\*Total Pull Requests\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Total Pull Requests\*\*: **$PR_COUNT**/" README.md
+            echo "Replaced Total Pull Requests placeholder with: $PR_COUNT"
+          else
+            sed -i "s/- \*\*Total Pull Requests\*\*: \*\*[0-9]*\*\*/- \*\*Total Pull Requests\*\*: **$PR_COUNT**/" README.md
+            echo "Updated existing Total Pull Requests to: $PR_COUNT"
+          fi
+          
+          # Public Repositories
+          if grep -q "- \*\*Public Repositories\*\*: \[Auto-updated via GitHub Actions\]" README.md; then
+            sed -i "s/- \*\*Public Repositories\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Public Repositories\*\*: **$PUBLIC_REPOS**/" README.md
+            echo "Replaced Public Repositories placeholder with: $PUBLIC_REPOS"
+          else
+            sed -i "s/- \*\*Public Repositories\*\*: \*\*[0-9]*\*\*/- \*\*Public Repositories\*\*: **$PUBLIC_REPOS**/" README.md
+            echo "Updated existing Public Repositories to: $PUBLIC_REPOS"
+          fi
+          
+          # Private Repositories
+          if grep -q "- \*\*Private Repositories\*\*: \[Auto-updated via GitHub Actions\]" README.md; then
+            sed -i "s/- \*\*Private Repositories\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Private Repositories\*\*: **$PRIVATE_REPOS**/" README.md
+            echo "Replaced Private Repositories placeholder with: $PRIVATE_REPOS"
+          else
+            sed -i "s/- \*\*Private Repositories\*\*: \*\*[0-9]*\*\*/- \*\*Private Repositories\*\*: **$PRIVATE_REPOS**/" README.md
+            echo "Updated existing Private Repositories to: $PRIVATE_REPOS"
+          fi
+          
+          # Total Commits
+          if grep -q "- \*\*Total Commits\*\*: \[Auto-updated via GitHub Actions\]" README.md; then
+            sed -i "s/- \*\*Total Commits\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Total Commits\*\*: **$TOTAL_COMMITS**/" README.md
+            echo "Replaced Total Commits placeholder with: $TOTAL_COMMITS"
+          else
+            sed -i "s/- \*\*Total Commits\*\*: \*\*[0-9]*\*\*/- \*\*Total Commits\*\*: **$TOTAL_COMMITS**/" README.md
+            echo "Updated existing Total Commits to: $TOTAL_COMMITS"
+          fi
+          
+          # Last Updated
+          if grep -q "- \*\*Last Updated\*\*: \[Auto-updated via GitHub Actions\]" README.md; then
+            sed -i "s/- \*\*Last Updated\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Last Updated\*\*: **$CURRENT_TIME_IST**/" README.md
+            echo "Replaced Last Updated placeholder with: $CURRENT_TIME_IST"
+          else
+            sed -i "s/- \*\*Last Updated\*\*: \*\*[0-9-]* [0-9:]* [A-Z]*\*\*/- \*\*Last Updated\*\*: **$CURRENT_TIME_IST**/" README.md
+            echo "Updated existing Last Updated to: $CURRENT_TIME_IST"
+          fi
+          
+          # Show the changes made
+          echo "=== Changes made to README.md ==="
+          diff README.md.backup README.md || echo "No changes detected or diff failed"
+          echo "=== End of changes ==="
 
           echo "Updated README with real stats:"
           echo "Total PRs: $PR_COUNT"
@@ -118,10 +168,24 @@ jobs:
           echo "Original UTC: $UTC_TIME"
           echo "Timezone conversion: UTC+5:30 (IST)"
 
+          # Note: Stats are now visible in README until next workflow run
+          echo "Stats updated successfully and are now visible in README"
+          echo "Next workflow run will update these values again"
+
       - name: Commit and Push Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          
+          # Check if README was actually modified
+          if git diff --quiet README.md; then
+            echo "No changes detected in README.md - skipping commit"
+            exit 0
+          else
+            echo "Changes detected in README.md - proceeding with commit"
+            git diff README.md
+          fi
+          
           git add README.md
           git commit -m "Update README with real GitHub statistics: ${{ steps.get-stats.outputs.PR_COUNT }} PRs, ${{ steps.get-stats.outputs.PRIVATE_REPOS }} private repos" || exit 0
           git push origin main
