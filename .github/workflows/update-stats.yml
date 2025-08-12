@@ -61,45 +61,13 @@ jobs:
           PRIVATE_REPOS="${{ steps.get-stats.outputs.PRIVATE_REPOS }}"
           TOTAL_COMMITS="${{ steps.get-stats.outputs.TOTAL_COMMITS }}"
           
-          # Get current UTC time and convert to IST (UTC+5:30)
+          # Get current time in IST safely (avoid manual arithmetic bugs)
           UTC_TIME=$(date -u +"%Y-%m-%d %H:%M")
+          CURRENT_TIME_IST=$(TZ=Asia/Kolkata date +"%Y-%m-%d %H:%M IST" 2>/dev/null || true)
           
-          # Convert to IST by adding 5 hours and 30 minutes
-          # Extract date and time components
-          DATE_PART=$(echo $UTC_TIME | cut -d' ' -f1)
-          TIME_PART=$(echo $UTC_TIME | cut -d' ' -f2)
-          
-          # Extract hour and minute
-          HOUR=$(echo $TIME_PART | cut -d':' -f1)
-          MINUTE=$(echo $TIME_PART | cut -d':' -f2)
-          
-          # Add 5 hours and 30 minutes
-          NEW_HOUR=$((HOUR + 5))
-          NEW_MINUTE=$((MINUTE + 30))
-          
-          # Handle minute overflow (if > 59)
-          if [ $NEW_MINUTE -ge 60 ]; then
-            NEW_HOUR=$((NEW_HOUR + 1))
-            NEW_MINUTE=$((NEW_MINUTE - 60))
-          fi
-          
-          # Handle hour overflow (if > 23)
-          if [ $NEW_HOUR -ge 24 ]; then
-            NEW_HOUR=$((NEW_HOUR - 24))
-            # Add one day to date (simplified - assumes same month)
-            DATE_PART=$(date -d "$DATE_PART +1 day" +"%Y-%m-%d" 2>/dev/null || echo $DATE_PART)
-          fi
-          
-          # Format the IST time
-          CURRENT_TIME_IST="${DATE_PART} $(printf "%02d:%02d" $NEW_HOUR $NEW_MINUTE) IST"
-          
-          # Fallback: Try using TZ environment variable
-          if [ -z "$CURRENT_TIME_IST" ] || [ "$CURRENT_TIME_IST" = " IST" ]; then
-            export TZ="Asia/Kolkata"
-            CURRENT_TIME_IST=$(date +"%Y-%m-%d %H:%M IST")
-            if [ -z "$CURRENT_TIME_IST" ]; then
-              CURRENT_TIME_IST="${UTC_TIME} IST"
-            fi
+          # Fallback if TZ database is unavailable
+          if [ -z "$CURRENT_TIME_IST" ]; then
+            CURRENT_TIME_IST=$(date -u -d "+5 hours 30 minutes" +"%Y-%m-%d %H:%M IST" 2>/dev/null || echo "${UTC_TIME} UTC")
           fi
 
           # Update README.md with real stats (handles both placeholders and existing values)

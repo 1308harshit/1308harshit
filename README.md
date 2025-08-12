@@ -16,6 +16,9 @@
 
 <div align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=1308harshit&theme=radical&hide_border=true&background=0D1117&stroke=6366F1&ring=8B5CF6&fire=EC4899&currStreakNum=10AEED&sideNums=10AEED&currStreakLabel=10AEED&sideLabels=10AEED&dates=6366F1" alt="GitHub Streak" />
+
+![Harshit's GitHub stats](https://github-readme-stats.vercel.app/api?username=1308harshit)
+
 </div>
 
 <br>
