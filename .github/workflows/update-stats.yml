@@ -105,53 +105,57 @@ jobs:
           # Update README.md with real stats (handles both placeholders and existing values)
           echo "Attempting to update stats in README.md..."
           
+          # Show current README content for debugging
+          echo "=== Current README content (stats section) ==="
+          grep -A 10 "Complete GitHub Statistics" README.md || echo "Stats section not found"
+          echo "=== End of current content ==="
+          
           # Backup original README for debugging
           cp README.md README.md.backup
           
-          # Try to replace placeholders first, then existing values
-          # Total Pull Requests
-          if grep -q "- \*\*Total Pull Requests\*\*: \[Auto-updated via GitHub Actions\]" README.md; then
+          # Check if placeholders exist and handle replacements accordingly
+          echo "Checking if placeholders exist in README..."
+          
+          # Validate that we have the required values
+          if [ -z "$PR_COUNT" ] || [ -z "$PUBLIC_REPOS" ] || [ -z "$PRIVATE_REPOS" ] || [ -z "$TOTAL_COMMITS" ]; then
+            echo "ERROR: Missing required values. PR_COUNT=$PR_COUNT, PUBLIC_REPOS=$PUBLIC_REPOS, PRIVATE_REPOS=$PRIVATE_REPOS, TOTAL_COMMITS=$TOTAL_COMMITS"
+            exit 1
+          fi
+          
+          HAS_PLACEHOLDERS=$(grep -c "\\[Auto-updated via GitHub Actions\\]" README.md || echo "0")
+          echo "Found $HAS_PLACEHOLDERS placeholder(s) in README"
+          
+          if [ "$HAS_PLACEHOLDERS" -gt 0 ]; then
+            echo "Replacing placeholders with real stats..."
+            
+            # Replace all placeholders at once
             sed -i "s/- \*\*Total Pull Requests\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Total Pull Requests\*\*: **$PR_COUNT**/" README.md
-            echo "Replaced Total Pull Requests placeholder with: $PR_COUNT"
-          else
-            sed -i "s/- \*\*Total Pull Requests\*\*: \*\*[0-9]*\*\*/- \*\*Total Pull Requests\*\*: **$PR_COUNT**/" README.md
-            echo "Updated existing Total Pull Requests to: $PR_COUNT"
-          fi
-          
-          # Public Repositories
-          if grep -q "- \*\*Public Repositories\*\*: \[Auto-updated via GitHub Actions\]" README.md; then
             sed -i "s/- \*\*Public Repositories\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Public Repositories\*\*: **$PUBLIC_REPOS**/" README.md
-            echo "Replaced Public Repositories placeholder with: $PUBLIC_REPOS"
-          else
-            sed -i "s/- \*\*Public Repositories\*\*: \*\*[0-9]*\*\*/- \*\*Public Repositories\*\*: **$PUBLIC_REPOS**/" README.md
-            echo "Updated existing Public Repositories to: $PUBLIC_REPOS"
-          fi
-          
-          # Private Repositories
-          if grep -q "- \*\*Private Repositories\*\*: \[Auto-updated via GitHub Actions\]" README.md; then
             sed -i "s/- \*\*Private Repositories\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Private Repositories\*\*: **$PRIVATE_REPOS**/" README.md
-            echo "Replaced Private Repositories placeholder with: $PRIVATE_REPOS"
-          else
-            sed -i "s/- \*\*Private Repositories\*\*: \*\*[0-9]*\*\*/- \*\*Private Repositories\*\*: **$PRIVATE_REPOS**/" README.md
-            echo "Updated existing Private Repositories to: $PRIVATE_REPOS"
-          fi
-          
-          # Total Commits
-          if grep -q "- \*\*Total Commits\*\*: \[Auto-updated via GitHub Actions\]" README.md; then
             sed -i "s/- \*\*Total Commits\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Total Commits\*\*: **$TOTAL_COMMITS**/" README.md
-            echo "Replaced Total Commits placeholder with: $TOTAL_COMMITS"
+            sed -i "s/- \*\*Last Updated\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Last Updated\*\*: **$CURRENT_TIME_IST**/" README.md
+            
+            echo "All placeholders replaced successfully"
           else
+            echo "No placeholders found, updating existing values..."
+            
+            # Update existing values using regex patterns
+            sed -i "s/- \*\*Total Pull Requests\*\*: \*\*[0-9]*\*\*/- \*\*Total Pull Requests\*\*: **$PR_COUNT**/" README.md
+            sed -i "s/- \*\*Public Repositories\*\*: \*\*[0-9]*\*\*/- \*\*Public Repositories\*\*: **$PUBLIC_REPOS**/" README.md
+            sed -i "s/- \*\*Private Repositories\*\*: \*\*[0-9]*\*\*/- \*\*Private Repositories\*\*: **$PRIVATE_REPOS**/" README.md
             sed -i "s/- \*\*Total Commits\*\*: \*\*[0-9]*\*\*/- \*\*Total Commits\*\*: **$TOTAL_COMMITS**/" README.md
-            echo "Updated existing Total Commits to: $TOTAL_COMMITS"
+            sed -i "s/- \*\*Last Updated\*\*: \*\*[0-9-]* [0-9:]* [A-Z]*\*\*/- \*\*Last Updated\*\*: **$CURRENT_TIME_IST**/" README.md
+            
+            echo "All existing values updated successfully"
           fi
           
-          # Last Updated
-          if grep -q "- \*\*Last Updated\*\*: \[Auto-updated via GitHub Actions\]" README.md; then
-            sed -i "s/- \*\*Last Updated\*\*: \[Auto-updated via GitHub Actions\]/- \*\*Last Updated\*\*: **$CURRENT_TIME_IST**/" README.md
-            echo "Replaced Last Updated placeholder with: $CURRENT_TIME_IST"
+          # Verify that replacements actually worked
+          echo "=== Verifying replacements ==="
+          if grep -q "\\[Auto-updated via GitHub Actions\\]" README.md; then
+            echo "WARNING: Some placeholders still exist after replacement!"
+            grep -n "\\[Auto-updated via GitHub Actions\\]" README.md
           else
-            sed -i "s/- \*\*Last Updated\*\*: \*\*[0-9-]* [0-9:]* [A-Z]*\*\*/- \*\*Last Updated\*\*: **$CURRENT_TIME_IST**/" README.md
-            echo "Updated existing Last Updated to: $CURRENT_TIME_IST"
+            echo "SUCCESS: All placeholders have been replaced"
           fi
           
           # Show the changes made
