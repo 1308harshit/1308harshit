@@ -16,17 +16,26 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
 
-      - name: Generate Snake
-        uses: Platane/snk@master
-        id: snake-gif
+      - name: Prepare output folder
+        run: mkdir -p dist
+
+      - name: Generate Snake (SVGs)
+        uses: Platane/snk@v3
         with:
-          github_user_name: 1308harshit
-          svg_out_path: dist/github-contribution-grid-snake-dark.svg
+          github_user_name: "1308harshit"
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - name: Verify generated files
+        run: |
+          ls -la dist || true
+          test -s dist/github-contribution-grid-snake-dark.svg
 
       - name: Commit and Push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add dist/
+          git add -A
           git commit -m "Update snake animation" || exit 0
           git push origin main

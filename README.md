@@ -238,7 +238,11 @@ Hi, I’m Harshit Khatsuriya — a DevOps & Cloud enthusiast passionate about bu
 </div>
 
 <div align="center">
-  <img src="https://github.com/1308harshit/1308harshit/blob/main/dist/github-contribution-grid-snake-dark.svg" alt="Snake Animation" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="dist/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="dist/github-contribution-grid-snake.svg" />
+    <img alt="github-snake" src="dist/github-contribution-grid-snake.svg" />
+  </picture>
 </div>
 
 ---
