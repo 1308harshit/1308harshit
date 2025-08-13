@@ -82,11 +82,11 @@ Hi, I’m Harshit Khatsuriya — a DevOps & Cloud enthusiast passionate about bu
 > **💡 How it works**: The workflow updates these values with real stats every 6 hours. Values remain visible between updates.
 
 ### **📊 Complete GitHub Statistics (Including Private Repos)**
-- **Total Pull Requests**: **101**
+- **Total Pull Requests**: **95**
 - **Public Repositories**: **32**  
 - **Private Repositories**: **3**
-- **Total Commits**: **374**
-- **Last Updated**: **2025-08-13 11:58 IST**
+- **Total Commits**: **375**
+- **Last Updated**: **2025-08-13 18:08 IST**
 
 > *This is why the public API only shows 1 PR - it can't see your work in private company repositories!*
 
