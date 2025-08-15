@@ -86,7 +86,7 @@ Hi, I’m Harshit Khatsuriya — a DevOps & Cloud enthusiast passionate about bu
 - **Total Pull Requests**: **95**
 - **Public Repositories**: **32**  
 - **Private Repositories**: **3**
-- **Total Commits**: **382**
+- **Total Commits**: **383**
 - **Last Updated**: **2025-08-15 23:02 IST**
 
 > *This is why the public API only shows 1 PR - it can't see your work in private company repositories!*
