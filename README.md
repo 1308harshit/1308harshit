@@ -30,7 +30,7 @@
 
 <br>
 
-## 🚀 **About Me**
+## 🚀 **About Me☺️**
 Hi, I’m Harshit Khatsuriya — a DevOps & Cloud enthusiast passionate about building scalable, automated, and high-performance systems.
 
 💻 Skilled in AWS, Docker, Terraform, GitHub Actions, and full-stack development.
