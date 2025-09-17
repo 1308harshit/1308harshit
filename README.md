@@ -86,7 +86,7 @@ Hi, I’m Harshit Khatsuriya — a DevOps & Cloud enthusiast passionate about bu
 
 
 ### **📊 Complete GitHub Statistics (Including Private Repos)**
-- **Total Pull Requests**: **45**
+- **Total Pull Requests**: **null**
 - **Public Repositories**: **35**  
 - **Private Repositories**: **4**
 - **Total Commits**: **null**
