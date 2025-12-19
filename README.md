@@ -5,24 +5,18 @@
 <div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=400&size=20&pause=2000&color=8B5CF6&center=true&vCenter=true&width=900&height=30&lines=Software+Engineer+%7C+Problem+Solver+%7C+Innovator;Full-Stack+Developer+%7C+Cloud+Enthusiast+%7C+Tech+Explorer;Passionate+about+creating+impactful+digital+solutions" alt="Typing SVG" />
 </div>
-
-
-<br>
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=1308harshit&theme=radical&no-frame=true&no-bg=false&margin-w=4&margin-h=4&row=1&column=7" alt="GitHub Trophies" />
-</div>
+<br >
 
 <br>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=1308harshit&theme=radical&hide_border=true&background=0D1117&stroke=6366F1&ring=8B5CF6&fire=EC4899&currStreakNum=10AEED&sideNums=10AEED&currStreakLabel=10AEED&sideLabels=10AEED&dates=6366F1" alt="GitHub Streak" />
-
-![Harshit's GitHub stats](https://github-readme-stats.vercel.app/api?username=1308harshit&theme=dark)
-
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=1308harshit&theme=radical&hide_border=true" alt="GitHub Streak" />
+  <br><br>
+  <img src="https://github-readme-stats.vercel.app/api?username=1308harshit&show_icons=true&theme=dark" alt="GitHub Stats" />
 </div>
 
 <br>
+
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&color=6366F1&line=8B5CF6&point=EC4899&area=true&hide_title=false" alt="Contribution Graph" />
