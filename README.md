@@ -10,7 +10,7 @@
 <br>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=1308harshit&theme=dark&hide_border=true&bg_color=F5F5F5&color=6366F1" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=1308harshit&bg_color=F5F5F5&color=6366F1" alt="GitHub Streak" />
   <br><br>
 </div>
 
