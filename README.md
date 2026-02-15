@@ -10,16 +10,15 @@
 <br>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=1308harshit&theme=radical&hide_border=true" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=1308harshit&theme=dark&hide_border=true&bg_color=F5F5F5&color=6366F1" alt="GitHub Streak" />
   <br><br>
-  <img src="https://github-readme-stats.vercel.app/api?username=1308harshit&show_icons=true&theme=dark" alt="GitHub Stats" />
 </div>
 
 <br>
 
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=1308harshit&theme=radical&hide_border=true&bg_color=0D1117&color=6366F1&line=8B5CF6&point=EC4899&area=true&hide_title=false" alt="Contribution Graph" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=1308harshit&theme=dark&hide_border=true&bg_color=F5F5F5&color=6366F1&line=8B5CF6&point=EC4899&area=true&hide_title=false" alt="Contribution Graph" />
 </div>
 
 <br>
