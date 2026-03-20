@@ -13,9 +13,9 @@
 ## 👨‍💻 About Me
 
 - 🚀 **DevOps & Cloud Engineer** — CI/CD, Kubernetes, Terraform, Ansible, Prometheus, Grafana, Loki across AWS, GCP & Azure
-- ⚙️ **Automation Engineer** — Browser automation (Playwright), workflow automation (Zapier, Make.com, n8n), AI-assisted pipelines
+- ⚙️ **Automation Engineer** — workflow automation (Zapier, Make.com, n8n), AI-assisted pipelines, Browser automation (Playwright)
 - 🛠️ **Full-Stack Developer** — Node.js, Express.js, React, Python, REST APIs, microservices
-- 🌍 Delivered **5+ production systems** for international clients while maintaining a **9.2 CGPA**
+- 🌍 Delivered **5+ production systems** for international & national clients while maintaining a **9.2 CGPA** in academics
 - 📬 Open to full-time **DevOps, SDE, or Automation Engineering** roles
 
 ---
