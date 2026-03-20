@@ -90,9 +90,9 @@
 
 | Project | Description | Stack |
 |--------|-------------|-------|
-| [**Instagram Analytics Platform**](https://github.com/1308harshit/instagram-analytics-platform) | Real-time data platform with multi-browser automation pool, round-robin distribution, SSE-based live updates, concurrency queue, MongoDB TTL storage, and DigitalOcean CI/CD deployment | Node.js · React 18 · MongoDB Atlas · SSE · Playwright · DigitalOcean |
+| [**Instagram Analytics Platform**](https://github.com/1308harshit/instaStalker) | Real-time data platform with multi-browser automation pool, round-robin distribution, SSE-based live updates, concurrency queue, MongoDB TTL storage, and DigitalOcean CI/CD deployment | Node.js · React 18 · MongoDB Atlas · SSE · Playwright · DigitalOcean |
 | **PhoenixCoreAI — AI Dispatcher** | AI-powered lead qualification and dispatch system for service businesses — captures inbound leads (SMS, forms, calls), qualifies via conversational AI, auto-schedules or escalates to human dispatcher | Zapier · Twilio · OpenAI · AI Workflows · SMS Automation |
-| **OpenClaw Research Automation** | Multi-step AI research pipeline — CDP browser automation across 6 AI panels, cross-analysis via MoltBot, data purification, gap analysis, and final output piped to Cursor for reasoning | OpenClaw · CDP · Browser Automation · Node.js |
+| [**OpenClaw Research Automation**](https://github.com/1308harshit/OpenClaw-Researcher) | Multi-step AI research pipeline — CDP browser automation across 6 AI panels, cross-analysis via MoltBot, data purification, gap analysis, and final output piped to Cursor for reasoning | CDP · Browser Automation · Node.js |
 
 ---
 
